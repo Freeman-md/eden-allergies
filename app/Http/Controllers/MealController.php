@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MealRequest;
+use App\Http\Resources\Item as ResourcesItem;
+use App\Http\Resources\Meal as ResourcesMeal;
 use App\Models\Allergy;
 use App\Models\Meal;
 use Illuminate\Http\Request;
@@ -19,7 +21,7 @@ class MealController extends Controller
     {
         $meals = Meal::paginate(10);
         
-        return response()->json($meals, Response::HTTP_OK);
+        return ResourcesMeal::collection($meals);
     }
 
     /**
@@ -36,7 +38,7 @@ class MealController extends Controller
         // Create meal for gotten allergy resource
         $meal = $allergy->meals()->create($request->all());
 
-        return response()->json($meal, Response::HTTP_CREATED);
+        return response()->json(new ResourcesMeal($meal), Response::HTTP_CREATED);
     }
 
     /**
@@ -47,7 +49,7 @@ class MealController extends Controller
      */
     public function show(Meal $meal)
     {
-        return response()->json($meal, Response::HTTP_OK);
+        return response()->json(new ResourcesMeal($meal), Response::HTTP_OK);
     }
 
     /**
@@ -61,7 +63,7 @@ class MealController extends Controller
     {
         $meal->update($request->all());
 
-        return response()->json($meal, Response::HTTP_OK);
+        return response()->json(new ResourcesMeal($meal), Response::HTTP_OK);
     }
 
     /**
@@ -74,7 +76,7 @@ class MealController extends Controller
     {
         $meal->delete();
 
-        return response()->json($meal, Response::HTTP_OK);
+        return response()->json(new ResourcesMeal($meal), Response::HTTP_OK);
     }
     
     /**
@@ -86,6 +88,6 @@ class MealController extends Controller
     public function getMealItems(Meal $meal) {
         $items = $meal->items()->paginate(10);
         
-        return response()->json($items, Response::HTTP_OK);
+        return ResourcesItem::collection($items);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ItemRequest;
+use App\Http\Resources\Item as ResourcesItem;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +19,7 @@ class ItemController extends Controller
     {
         $items = Item::paginate(10);
 
-        return response()->json($items, Response::HTTP_OK);
+        return ResourcesItem::collection($items);
     }
 
     /**
@@ -31,7 +32,7 @@ class ItemController extends Controller
     {
         $item = Item::create($request->all());
 
-        return response()->json($item, Response::HTTP_OK);
+        return response()->json(new ResourcesItem($item), Response::HTTP_CREATED);
     }
 
     /**
@@ -42,7 +43,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        return response()->json($item, Response::HTTP_OK);
+        return response()->json(new ResourcesItem($item), Response::HTTP_OK);
     }
 
     /**
@@ -56,7 +57,7 @@ class ItemController extends Controller
     {
         $item->update($request->all());
 
-        return response()->json($item, Response::HTTP_OK);
+        return response()->json(new ResourcesItem($item), Response::HTTP_OK);
     }
 
     /**
@@ -69,6 +70,6 @@ class ItemController extends Controller
     {
         $item->delete();
 
-        return response()->json($item, Response::HTTP_OK);
+        return response()->json(new ResourcesItem($item), Response::HTTP_OK);
     }
 }

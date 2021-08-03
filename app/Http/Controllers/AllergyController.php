@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AllergyRequest;
+use App\Http\Resources\Allergy as ResourcesAllergy;
+use App\Http\Resources\Meal as ResourcesMeal;
 use App\Models\Allergy;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +20,7 @@ class AllergyController extends Controller
     {
         $allergies = Allergy::paginate(10);
 
-        return response()->json($allergies, Response::HTTP_OK);
+        return ResourcesAllergy::collection($allergies);
     }
 
     /**
@@ -32,7 +34,7 @@ class AllergyController extends Controller
 
         $allergy = Allergy::create($request->all());
 
-        return response()->json($allergy, Response::HTTP_CREATED);
+        return response()->json(new ResourcesAllergy($allergy), Response::HTTP_CREATED);
     }
 
     /**
@@ -43,7 +45,7 @@ class AllergyController extends Controller
      */
     public function show(Allergy $allergy)
     {
-        return response()->json($allergy, Response::HTTP_OK);
+        return response()->json(new ResourcesAllergy($allergy), Response::HTTP_OK);
     }
 
     /**
@@ -57,7 +59,7 @@ class AllergyController extends Controller
     {
         $allergy->update($request->all());
 
-        return response()->json($allergy, Response::HTTP_OK);
+        return response()->json(new ResourcesAllergy($allergy), Response::HTTP_OK);
     }
 
     /**
@@ -70,7 +72,7 @@ class AllergyController extends Controller
     {
         $allergy->delete();
 
-        return response()->json($allergy, Response::HTTP_OK);
+        return response()->json(new ResourcesAllergy($allergy), Response::HTTP_OK);
     }
     
     /**
@@ -82,6 +84,6 @@ class AllergyController extends Controller
     public function getAllergyMeals(Allergy $allergy) {
         $meals = $allergy->meals()->paginate(10);
         
-        return response()->json($meals, Response::HTTP_OK);
+        return ResourcesMeal::collection($meals);
     }
 }
