@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemMealTable extends Migration
+class CreateAllergyUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateItemMealTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_meal', function (Blueprint $table) {
+        Schema::create('allergy_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('item_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('meal_id')->constrained()->cascadeOnDelete();
-            $table->enum('category', ['main', 'side'])->default('side');
+            $table->foreignId('allergy_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateItemMealTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('item_meal');
+        Schema::dropIfExists('allergy_user');
     }
 }

@@ -17,4 +17,8 @@ class Allergy extends Model
     public function meals() {
         return $this->hasMany(Meal::class);
     }
+
+    public function users() {
+        return $this->belongsToMany(User::class);
+    }
 }
