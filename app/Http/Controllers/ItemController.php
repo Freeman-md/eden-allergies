@@ -6,6 +6,7 @@ use App\Http\Requests\ItemRequest;
 use App\Http\Resources\Item as ResourcesItem;
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpFoundation\Response;
 
 class ItemController extends Controller
@@ -17,7 +18,10 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = Item::paginate(10);
+        // Get items from CACHE if exists else get items from database and add them CACHE
+        $items = Cache::remember(request()->fullUrl(), 60, function() {
+            return Item::paginate(10);
+        });
 
         return ResourcesItem::collection($items);
     }

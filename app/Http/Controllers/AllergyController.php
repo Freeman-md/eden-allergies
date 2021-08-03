@@ -7,6 +7,7 @@ use App\Http\Resources\Allergy as ResourcesAllergy;
 use App\Http\Resources\Meal as ResourcesMeal;
 use App\Models\Allergy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpFoundation\Response;
 
 class AllergyController extends Controller
@@ -18,7 +19,10 @@ class AllergyController extends Controller
      */
     public function index()
     {
-        $allergies = Allergy::paginate(10);
+        // Get allergies from CACHE if exists else get allergies from database and add them CACHE
+        $allergies = Cache::remember(request()->fullUrl(), 60, function() {
+            return Allergy::paginate(10);
+        });
 
         return ResourcesAllergy::collection($allergies);
     }
@@ -82,7 +86,10 @@ class AllergyController extends Controller
      * @return void
      */
     public function getAllergyMeals(Allergy $allergy) {
-        $meals = $allergy->meals()->paginate(10);
+        // Get allergy meals from CACHE if exists else get allergy meals from database and add them CACHE
+        $meals = Cache::remember(request()->fullUrl(), 60, function() use ($allergy) {
+            return $allergy->meals()->paginate(10);
+        });
         
         return ResourcesMeal::collection($meals);
     }
