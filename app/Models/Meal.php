@@ -19,6 +19,6 @@ class Meal extends Model
     }
 
     public function items() {
-        return $this->hasMany(Item::class);
+        return $this->belongsToMany(Item::class)->withPivot('category');
     }
 }

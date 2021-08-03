@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMealItemTable extends Migration
+class CreateItemMealTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMealItemTable extends Migration
      */
     public function up()
     {
-        Schema::create('meal_item', function (Blueprint $table) {
+        Schema::create('item_meal', function (Blueprint $table) {
             $table->id();
             $table->foreignId('meal_id')->constrained()->cascadeOnDelete();
             $table->foreignId('item_id')->constrained()->cascadeOnDelete();
@@ -29,6 +29,6 @@ class CreateMealItemTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meal_item');
+        Schema::dropIfExists('item_meal');
     }
 }

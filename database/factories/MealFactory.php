@@ -22,7 +22,8 @@ class MealFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->text(10),
+            'description' => $this->faker->sentence(10)
         ];
     }
 }

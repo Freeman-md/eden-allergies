@@ -22,7 +22,8 @@ class ItemFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->text(7),
+            'description' => $this->faker->sentence(4)
         ];
     }
 }
