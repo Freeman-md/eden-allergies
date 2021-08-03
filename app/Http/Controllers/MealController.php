@@ -61,4 +61,14 @@ class MealController extends Controller
     {
         //
     }
+    
+    /**
+     * Get items for the specified resource from storage
+     *
+     * @param  mixed $meal
+     * @return void
+     */
+    public function getMealItems(Meal $meal) {
+        
+    }
 }

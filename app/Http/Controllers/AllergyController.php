@@ -61,4 +61,14 @@ class AllergyController extends Controller
     {
         //
     }
+    
+    /**
+     * Get meals for the specified resource from storage
+     *
+     * @param  mixed $allergy
+     * @return void
+     */
+    public function getAllergyMeals(Allergy $allergy) {
+
+    }
 }

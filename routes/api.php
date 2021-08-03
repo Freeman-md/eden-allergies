@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AllergyController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\MealController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('allergies', AllergyController::class)->except(['edit', 'create']);
+Route::resource('meals', MealController::class)->except(['edit', 'create']);
+Route::resource('items', ItemController::class)->except(['edit', 'create']);
+
+Route::get('allergies/{allergy}/meals', [AllergyController::class, 'getAllergyMeals'])->name('allergy.meals');
+Route::get('/meals/{meal}/items', [MealController::class, 'getMealItems'])->name('meal.items');
