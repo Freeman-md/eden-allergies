@@ -27,3 +27,8 @@ Route::resource('items', ItemController::class)->except(['edit', 'create']);
 
 Route::get('allergies/{allergy}/meals', [AllergyController::class, 'getAllergyMeals'])->name('allergy.meals');
 Route::get('/meals/{meal}/items', [MealController::class, 'getMealItems'])->name('meal.items');
+
+Route::fallback(function(){
+    return response()->json([
+        'error' => 'Page Not Found. If error persists, contact info@myapp.com'], 404);
+});
