@@ -15,6 +15,9 @@ class CreateMealItemTable extends Migration
     {
         Schema::create('meal_item', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('meal_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('item_id')->constrained()->cascadeOnDelete();
+            $table->enum('category', ['main', 'side'])->default('side');
             $table->timestamps();
         });
     }
