@@ -21,9 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('allergies', AllergyController::class)->except(['edit', 'create']);
-Route::resource('meals', MealController::class)->except(['edit', 'create']);
-Route::resource('items', ItemController::class)->except(['edit', 'create']);
+Route::apiResource('allergies', AllergyController::class);
+Route::apiResource('meals', MealController::class);
+Route::apiResource('items', ItemController::class);
 
 Route::get('allergies/{allergy}/meals', [AllergyController::class, 'getAllergyMeals'])->name('allergy.meals');
 Route::get('/meals/{meal}/items', [MealController::class, 'getMealItems'])->name('meal.items');
