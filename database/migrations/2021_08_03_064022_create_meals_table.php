@@ -18,7 +18,6 @@ class CreateMealsTable extends Migration
             $table->foreignId('allergy_id')->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->softDeletes();
             $table->timestamps();
         });
     }
