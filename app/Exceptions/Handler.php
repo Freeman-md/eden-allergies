@@ -62,44 +62,44 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof ValidationException) {
             return response()->json(
-                [ 'error' => $exception->response ], Response::HTTP_UNPROCESSABLE_ENTITY
+                [ 'message' => $exception->response ], Response::HTTP_UNPROCESSABLE_ENTITY
             );
         }
 
         if ($exception instanceof ModelNotFoundException) {
             return response()->json(
-                [ 'error' => 'Entry for '.str_replace('App\\Models\\', '', $exception->getModel()).' not found'], 
+                [ 'message' => 'Entry for '.str_replace('App\\Models\\', '', $exception->getModel()).' not found'], 
                 Response::HTTP_NOT_FOUND
             );
         }
 
         if ($exception instanceof AuthenticationException) {
             return response()->json(
-                [ 'error' => 'Unauthenticated' ], Response::HTTP_UNAUTHORIZED
+                [ 'message' => 'Unauthenticated' ], Response::HTTP_UNAUTHORIZED
             );
         }
 
         if ($exception instanceof AuthorizationException) {
             return response()->json(
-                [ 'error' => $exception->getMessage() ], Response::HTTP_FORBIDDEN
+                [ 'message' => $exception->getMessage() ], Response::HTTP_FORBIDDEN
             );
         }
 
         if ($exception instanceof NotFoundHttpException) {
             return response()->json(
-                [ 'error' => 'The specified URL could not be found' ], Response::HTTP_NOT_FOUND
+                [ 'message' => 'The specified URL could not be found' ], Response::HTTP_NOT_FOUND
             );
         }
 
         if ($exception instanceof MethodNotAllowedHttpException) {
             return response()->json(
-                [ 'error' => 'The specified method for the request is invalid' ], Response::HTTP_METHOD_NOT_ALLOWED
+                [ 'message' => 'The specified method for the request is invalid' ], Response::HTTP_METHOD_NOT_ALLOWED
             );
         }
 
         if ($exception instanceof HttpException) {
             return response()->json(
-                [ 'error' => $exception->getMessage() ], $exception->getStatusCode()
+                [ 'message' => $exception->getMessage() ], $exception->getStatusCode()
             );
         }
 
@@ -108,17 +108,11 @@ class Handler extends ExceptionHandler
 
             if ($errorCode == 1451) {
                 return response()->json(
-                    ['error' => 'Cannot remove this resource permanently. It is related with some other resources.'], 
+                    ['message' => 'Cannot remove this resource permanently. It is related with some other resources.'], 
                     Response::HTTP_CONFLICT);
             }
         }
 
-        if (config('app.debug')) {
-            return parent::render($request, $exception);
-        }
-
-        return response()->json(
-            ['error' => 'Unexpected error. Try later'], 
-            Response::HTTP_INTERNAL_SERVER_ERROR);
+        return parent::render($request, $exception);
     }
 }
