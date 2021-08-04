@@ -11,10 +11,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @group Meal Management
+ *
+ * APIs for managing meals
+ */
 class MealController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * GET api/meals
+     * 
+     * Display a listing of meals
+     * 
+     * @queryParam page Page number to show.
+     * 
+     * @apiResourceCollection App\Http\Resources\Meal
+     * @apiResourceModel App\Models\Meal paginate=10
+     *
+     * @responseField id The id of the meal
+     * @responseField title The title of the meal
+     * @responseField description The description of the meal
+     * @responseField allergy The allergy the meal belongs to
+     * @responseField items The url to get meal items
+     * @responseField created_at Timestamp meal was created
+     * @responseField updated_at Timestamp meal was last updated
+     * @responseField deleted_at Timestamp meal was trashed
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,9 +50,27 @@ class MealController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
+     * POST api/meals
+     * 
+     * Store a newly created meal in storage.
+     * 
      * @param  \Illuminate\Http\Request  $request
+     * 
+     * @bodyParam title string required The new title of the meal
+     * @bodyParam description string The new description of the meal
+     * 
+     * @apiResource App\Http\Resources\Meal
+     * @apiResourceModel App\Models\Meal
+     * 
+     * @responseField id The id of the meal
+     * @responseField title The title of the meal
+     * @responseField description The description of the meal
+     * @responseField allergy The allergy the meal belongs to
+     * @responseField items The url to get meal items
+     * @responseField created_at Timestamp meal was created
+     * @responseField updated_at Timestamp meal was last updated
+     * @responseField deleted_at Timestamp meal was trashed
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(MealRequest $request)
@@ -46,9 +85,24 @@ class MealController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
+     * GET api/meals/{id}
+     * 
+     * Display the specified meal.
+     * 
      * @param  \App\Models\Meal  $meal
+     * 
+     * @apiResource App\Http\Resources\Meal
+     * @apiResourceModel App\Models\Meal
+     * 
+     * @responseField id The id of the meal
+     * @responseField title The title of the meal
+     * @responseField description The description of the meal
+     * @responseField allergy The allergy the meal belongs to
+     * @responseField items The url to get meal items
+     * @responseField created_at Timestamp meal was created
+     * @responseField updated_at Timestamp meal was last updated
+     * @responseField deleted_at Timestamp meal was trashed
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Meal $meal)
@@ -57,10 +111,28 @@ class MealController extends Controller
     }
 
     /**
+     * PUT api/meals/{id}
+     * 
      * Update the specified resource in storage.
-     *
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Meal  $meal
+     * 
+     * @bodyParam title string required The new title of the meal
+     * @bodyParam description string The new description of the meal
+     * 
+     * @apiResource App\Http\Resources\Meal
+     * @apiResourceModel App\Models\Meal
+     * 
+     * @responseField id The id of the meal
+     * @responseField title The title of the meal
+     * @responseField description The description of the meal
+     * @responseField allergy The allergy the meal belongs to
+     * @responseField items The url to get meal items
+     * @responseField created_at Timestamp meal was created
+     * @responseField updated_at Timestamp meal was last updated
+     * @responseField deleted_at Timestamp meal was trashed
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Meal $meal)
@@ -71,9 +143,24 @@ class MealController extends Controller
     }
 
     /**
+     * DELETE api/meals/{id}
+     * 
      * Remove the specified resource from storage.
-     *
+     * 
      * @param  \App\Models\Meal  $meal
+     * 
+     * @apiResource App\Http\Resources\Meal
+     * @apiResourceModel App\Models\Meal
+     * 
+     * @responseField id The id of the meal
+     * @responseField title The title of the meal
+     * @responseField description The description of the meal
+     * @responseField allergy The allergy the meal belongs to
+     * @responseField items The url to get meal items
+     * @responseField created_at Timestamp meal was created
+     * @responseField updated_at Timestamp meal was last updated
+     * @responseField deleted_at Timestamp meal was trashed
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Meal $meal)
@@ -84,10 +171,23 @@ class MealController extends Controller
     }
     
     /**
-     * Get items for the specified resource from storage
+     * GET api/meals/{id}/items
      *
-     * @param  mixed $meal
-     * @return void
+     * Get items for the specified meal from storage
+     * 
+     * @param  App\Models\Meal $meal
+     * 
+     * @apiResourceCollection App\Http\Resources\Item
+     * @apiResourceModel App\Models\Item paginate=10
+     * 
+     * @responseField id The id of the item
+     * @responseField title The title of the item
+     * @responseField description The description of the item
+     * @responseField created_at Timestamp item was created
+     * @responseField updated_at Timestamp item was last updated
+     * @responseField deleted_at Timestamp item was trashed
+     *
+     * @return \Illuminate\Http\Response
      */
     public function getMealItems(Meal $meal) {
         // Get meal items from CACHE if exists else get meal items from database and add them CACHE

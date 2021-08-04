@@ -16,8 +16,8 @@ class Meal extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->title,
-            'content' => $this->description,
+            'title' => $this->title,
+            'description' => $this->description,
             'allergy' => $this->allergy,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,

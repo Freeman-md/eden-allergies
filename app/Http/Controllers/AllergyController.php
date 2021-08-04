@@ -10,11 +10,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @group Allergy Management
+ *
+ * APIs for managing allergies
+ */
 class AllergyController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * GET api/allergies
+     * 
+     * Display a listing of allergies
+     * 
+     * @queryParam page Page number to show.
+     * 
+     * @apiResourceCollection App\Http\Resources\Allergy
+     * @apiResourceModel App\Models\Allergy paginate=10
      *
+     * @responseField id The id of the allergy
+     * @responseField title The title of the allergy
+     * @responseField description The description of the allergy
+     * @responseField meals The url to get allergy meals
+     * @responseField created_at Timestamp allergy was created
+     * @responseField updated_at Timestamp allergy was last updated
+     * @responseField deleted_at Timestamp allergy was trashed
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -28,9 +48,25 @@ class AllergyController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * POST api/allergies
+     * 
+     * Store a newly created allergy in storage.
+     * 
+     * @bodyParam title string required The title of the allergy
+     * @bodyParam description string The description of the allergy
+     * 
+     * @apiResource App\Http\Resources\Allergy
+     * @apiResourceModel App\Models\Allergy
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @responseField id The id of the newly created allergy
+     * @responseField title The title of the allergy
+     * @responseField description The description of the allergy
+     * @responseField meals The url to get allergy meals
+     * @responseField created_at Timestamp allergy was created
+     * @responseField updated_at Timestamp allergy was last updated
+     * @responseField deleted_at Timestamp allergy was trashed
+     *
+     * @param  \App\Http\Requests\AllergyRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(AllergyRequest $request)
@@ -42,9 +78,23 @@ class AllergyController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
+     * GET api/allergies/{id}
+     * 
+     * Get a specific allergy
+     * 
      * @param  \App\Models\Allergy  $allergy
+     * 
+     * @apiResource App\Http\Resources\Allergy
+     * @apiResourceModel App\Models\Allergy
+     *
+     * @responseField id The id of the newly created allergy
+     * @responseField title The title of the allergy
+     * @responseField description The description of the allergy
+     * @responseField meals The url to get allergy meals
+     * @responseField created_at Timestamp allergy was created
+     * @responseField updated_at Timestamp allergy was last updated
+     * @responseField deleted_at Timestamp allergy was trashed
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Allergy $allergy)
@@ -53,10 +103,27 @@ class AllergyController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * PUT api/allergies/{id}
+     * 
+     * Update the specified allergy in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\AllergyRequest  $request
      * @param  \App\Models\Allergy  $allergy
+     * 
+     * @bodyParam title string required The new title of the allergy
+     * @bodyParam description string The new description of the allergy
+     * 
+     * @apiResource App\Http\Resources\Allergy
+     * @apiResourceModel App\Models\Allergy
+     *
+     * @responseField id The id of the newly created allergy
+     * @responseField title The title of the allergy
+     * @responseField description The description of the allergy
+     * @responseField meals The url to get allergy meals
+     * @responseField created_at Timestamp allergy was created
+     * @responseField updated_at Timestamp allergy was last updated
+     * @responseField deleted_at Timestamp allergy was trashed
+     * 
      * @return \Illuminate\Http\Response
      */
     public function update(AllergyRequest $request, Allergy $allergy)
@@ -67,9 +134,23 @@ class AllergyController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * DELETE api/allergies/{id}
      *
+     * Remove the specified allergy from storage.
+     * 
      * @param  \App\Models\Allergy  $allergy
+     * 
+     * @apiResource App\Http\Resources\Allergy
+     * @apiResourceModel App\Models\Allergy
+     *
+     * @responseField id The id of the newly created allergy
+     * @responseField title The title of the allergy
+     * @responseField description The description of the allergy
+     * @responseField meals The url to get allergy meals
+     * @responseField created_at Timestamp allergy was created
+     * @responseField updated_at Timestamp allergy was last updated
+     * @responseField deleted_at Timestamp allergy was trashed
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Allergy $allergy)
@@ -80,10 +161,24 @@ class AllergyController extends Controller
     }
     
     /**
-     * Get meals for the specified resource from storage
+     * GET api/allergies/{id}/meals
+     * 
+     * Display meals for the specified allergy from storage
+     * 
+     * @apiResourceCollection App\Http\Resources\Meal
+     * @apiResourceModel App\Models\Meal paginate=10
+     * 
+     * @responseField id The id of a meal
+     * @responseField title The title of a meal
+     * @responseField description The description of a allergy
+     * @responseField allergy The allergy the meal belongs to
+     * @responseField items The url to get meal items
+     * @responseField created_at Timestamp meal was created
+     * @responseField updated_at Timestamp meal was last updated
+     * @responseField deleted_at Timestamp meal was trashed
      *
-     * @param  mixed $allergy
-     * @return void
+     * @param \App\Models\Allergy $allergy
+     * @return Illuminate\Http\Response
      */
     public function getAllergyMeals(Allergy $allergy) {
         // Get allergy meals from CACHE if exists else get allergy meals from database and add them CACHE
