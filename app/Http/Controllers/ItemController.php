@@ -19,7 +19,7 @@ class ItemController extends Controller
     /**
      * GET api/items
      * 
-     * Display a listing of the items.
+     * Display a listing of items.
      * 
      * @apiResourceCollection App\Http\Resources\Item
      * @apiResourceModel App\Models\Item paginate=10
