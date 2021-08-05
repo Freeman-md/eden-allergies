@@ -1,60 +1,49 @@
-name: 'Item Management'
+name: 'Auth Endpoints'
 description: |-
 
-  APIs for managing items
+  API Endpoints for authentication
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/items
+      - POST
+    uri: api/register
     metadata:
-      title: 'GET api/items'
-      description: 'Display a listing of the items.'
+      title: ''
+      description: ''
       authenticated: false
     headers:
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
     queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":69,"title":"Quis.","description":"Doloribus omnis dolores eveniet.","created_at":"2021-08-04T00:49:45.000000Z","updated_at":"2021-08-04T00:49:45.000000Z","deleted_at":null},{"id":70,"title":"In.","description":"Nihil beatae voluptas.","created_at":"2021-08-04T00:49:45.000000Z","updated_at":"2021-08-04T00:49:45.000000Z","deleted_at":null}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
-        headers: []
-        description: null
-    responseFields:
-      id:
-        name: id
-        description: 'The id of the item'
-        type: integer
-      title:
-        name: title
-        description: 'The name of the title'
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: nostrum
         type: string
-      description:
-        name: description
-        description: 'The description of the title'
+      email:
+        name: email
+        description: ''
+        required: true
+        example: illum
         type: string
-      created_at:
-        name: created_at
-        description: 'Timestamp title was created'
+      password:
+        name: password
+        description: ''
+        required: true
+        example: autem
         type: string
-      updated_at:
-        name: updated_at
-        description: 'Timestamp title was last updated'
-        type: string
-      deleted_at:
-        name: deleted_at
-        description: 'Timestamp title was trashed'
-        type: ''
+    responses: []
+    responseFields: []
   -
     httpMethods:
       - POST
-    uri: api/items
+    uri: api/login
     metadata:
-      title: 'POST api/items'
-      description: 'Store a newly created item in storage.'
+      title: ''
+      description: ''
       authenticated: false
     headers:
       Content-Type: application/json
@@ -62,220 +51,33 @@ endpoints:
     urlParameters: []
     queryParameters: []
     bodyParameters:
-      title:
-        name: title
-        description: 'The title of the meal'
+      email:
+        name: email
+        description: ''
         required: true
-        example: enim
+        example: debitis
         type: string
-      description:
-        name: description
-        description: 'The description of the meal'
-        required: false
-        example: dolor
+      password:
+        name: password
+        description: ''
+        required: true
+        example: qui
         type: string
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":71,"title":"Vel.","description":"Expedita omnis illum laborum.","created_at":"2021-08-04T00:49:45.000000Z","updated_at":"2021-08-04T00:49:45.000000Z","deleted_at":null}}'
-        headers: []
-        description: null
-    responseFields:
-      id:
-        name: id
-        description: 'The id of the item'
-        type: integer
-      title:
-        name: title
-        description: 'The title of the item'
-        type: string
-      description:
-        name: description
-        description: 'The description of the item'
-        type: string
-      created_at:
-        name: created_at
-        description: 'Timestamp item was created'
-        type: string
-      updated_at:
-        name: updated_at
-        description: 'Timestamp item was last updated'
-        type: string
-      deleted_at:
-        name: deleted_at
-        description: 'Timestamp item was trashed'
-        type: ''
+    responses: []
+    responseFields: []
   -
     httpMethods:
-      - GET
-    uri: 'api/items/{id}'
+      - POST
+    uri: api/logout
     metadata:
-      title: 'GET api/items/{id}'
-      description: 'Display the specified item.'
+      title: ''
+      description: ''
       authenticated: false
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the item.'
-        required: true
-        example: 12
-        type: integer
+    urlParameters: []
     queryParameters: []
     bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":72,"title":"Ipsam.","description":"Ad sed sed rerum perferendis dolores.","created_at":"2021-08-04T00:49:45.000000Z","updated_at":"2021-08-04T00:49:45.000000Z","deleted_at":null}}'
-        headers: []
-        description: null
-    responseFields:
-      id:
-        name: id
-        description: 'The id of the item'
-        type: integer
-      title:
-        name: title
-        description: 'The title of the item'
-        type: string
-      description:
-        name: description
-        description: 'The description of the item'
-        type: string
-      created_at:
-        name: created_at
-        description: 'Timestamp item was created'
-        type: string
-      updated_at:
-        name: updated_at
-        description: 'Timestamp item was last updated'
-        type: string
-      deleted_at:
-        name: deleted_at
-        description: 'Timestamp item was trashed'
-        type: ''
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/items/{id}'
-    metadata:
-      title: 'PUT api/items/{id}'
-      description: 'Update the specified item in storage.'
-      authenticated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the item.'
-        required: true
-        example: 3
-        type: integer
-    queryParameters: []
-    bodyParameters:
-      title:
-        name: title
-        description: 'The new title of the meal'
-        required: true
-        example: optio
-        type: string
-      description:
-        name: description
-        description: 'The new description of the meal'
-        required: false
-        example: officiis
-        type: string
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":73,"title":"Aut.","description":"Molestiae veniam repellat officia quo aut.","created_at":"2021-08-04T00:49:45.000000Z","updated_at":"2021-08-04T00:49:45.000000Z","deleted_at":null}}'
-        headers: []
-        description: null
-    responseFields:
-      id:
-        name: id
-        description: 'The id of the item'
-        type: integer
-      title:
-        name: title
-        description: 'The title of the item'
-        type: string
-      description:
-        name: description
-        description: 'The description of the item'
-        type: string
-      allergy:
-        name: allergy
-        description: 'The allergy the meal belongs to'
-        type: ''
-      items:
-        name: items
-        description: 'The url to get meal items'
-        type: ''
-      created_at:
-        name: created_at
-        description: 'Timestamp item was created'
-        type: string
-      updated_at:
-        name: updated_at
-        description: 'Timestamp item was last updated'
-        type: string
-      deleted_at:
-        name: deleted_at
-        description: 'Timestamp item was trashed'
-        type: ''
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/items/{id}'
-    metadata:
-      title: 'DELETE api/items/{id}'
-      description: 'Remove the specified item from storage.'
-      authenticated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the item.'
-        required: true
-        example: 16
-        type: integer
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":74,"title":"Alias.","description":"Suscipit et harum.","created_at":"2021-08-04T00:49:46.000000Z","updated_at":"2021-08-04T00:49:46.000000Z","deleted_at":null}}'
-        headers: []
-        description: null
-    responseFields:
-      id:
-        name: id
-        description: 'The id of the item'
-        type: integer
-      title:
-        name: title
-        description: 'The title of the item'
-        type: string
-      description:
-        name: description
-        description: 'The description of the item'
-        type: string
-      created_at:
-        name: created_at
-        description: 'Timestamp item was created'
-        type: string
-      updated_at:
-        name: updated_at
-        description: 'Timestamp item was last updated'
-        type: string
-      deleted_at:
-        name: deleted_at
-        description: 'Timestamp item was trashed'
-        type: ''
+    responses: []
+    responseFields: []

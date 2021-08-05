@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserRequest;
 use App\Http\Resources\Allergy;
 use App\Http\Resources\Meal;
 use App\Models\Allergy as ModelsAllergy;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @group User Endpoints
+ *
+ * API Endpoints for managing users
+ */
 class UserController extends Controller
 {   
     
@@ -26,22 +29,58 @@ class UserController extends Controller
     }
     
     /**
-     * getAllergies
+     * GET  api/users/allergies
+     * 
+     * Get allergies for authenticated user
+     * 
+     * @authenticated
+     * 
+     * @apiResourceCollection App\Http\Resources\Allergy
+     * @apiResourceModel App\Models\Allergy
+     * 
+     * @responseField id The id of the allergy
+     * @responseField title The title of the allergy
+     * @responseField description The description of the allergy
+     * @responseField meals The url to get allergy meals
+     * @responseField created_at Timestamp allergy was created
+     * @responseField updated_at Timestamp allergy was last updated
+     * @responseField deleted_at Timestamp allergy was trashed
      *
-     * @return void
+     * @return \Illuminate\Http\Response
      */
     public function getAllergies() {
         return response()->json(Allergy::collection($this->userAllergies()), Response::HTTP_OK);
     }
 
     /**
-     * storeAllergies
+     * GET  api/users/allergies/add
+     * 
+     * Add allergies for authenticated user
+     * 
+     * @authenticated
+     * 
+     * @param  \App\Http\Requests\Request  $request
+     * 
+     * @bodyParam allergies required array Array of allergy ids to add
+     * 
+     * @apiResourceCollection App\Http\Resources\Allergy
+     * @apiResourceModel App\Models\Allergy
+     * 
+     * @responseField id The id of the allergy
+     * @responseField title The title of the allergy
+     * @responseField description The description of the allergy
+     * @responseField meals The url to get allergy meals
+     * @responseField created_at Timestamp allergy was created
+     * @responseField updated_at Timestamp allergy was last updated
+     * @responseField deleted_at Timestamp allergy was trashed
      *
-     * @param  App\Http\Requests\UserRequest $request
-     * @param  App\Models\User $user
-     * @return void
+     * @return \Illuminate\Http\Response
      */
-    public function addAllergies(UserRequest $request) {
+    public function addAllergies(Request $request) {
+        $request->validate([
+            'allergies' => 'required'
+        ]);
+
         $ids = array_map('intval', json_decode($request->input('allergies')));
 
         foreach ($ids as $id) {
@@ -54,14 +93,36 @@ class UserController extends Controller
         return response()->json(Allergy::collection($this->userAllergies()), Response::HTTP_CREATED);
     }
 
+    
     /**
-     * destroyAllergies
+     * GET  api/users/allergies/remove
+     * 
+     * Remove allergies for authenticated user
+     * 
+     * @authenticated
+     * 
+     * @param  \App\Http\Requests\Request  $request
+     * 
+     * @bodyParam allergies required array Array of allergy ids to remove
+     * 
+     * @apiResourceCollection App\Http\Resources\Allergy
+     * @apiResourceModel App\Models\Allergy
+     * 
+     * @responseField id The id of the allergy
+     * @responseField title The title of the allergy
+     * @responseField description The description of the allergy
+     * @responseField meals The url to get allergy meals
+     * @responseField created_at Timestamp allergy was created
+     * @responseField updated_at Timestamp allergy was last updated
+     * @responseField deleted_at Timestamp allergy was trashed
      *
-     * @param  App\Http\Requests\UserRequest $request
-     * @param  App\Models\User $user
-     * @return void
+     * @return \Illuminate\Http\Response
      */
     public function removeAllergies(Request $request) {
+        $request->validate([
+            'allergies' => 'required'
+        ]);
+
         $ids = array_map('intval', json_decode($request->input('allergies')));
 
         foreach ($ids as $id) {
@@ -76,9 +137,24 @@ class UserController extends Controller
 
         
     /**
-     * getMeals
+     * GET api/users/allergies/meals
+     * 
+     * Get Meal Recommendations
+     * 
+     * 
+     * @apiResourceCollection App\Http\Resources\Meal
+     * @apiResourceModel App\Models\Meal
      *
-     * @return void
+     * @responseField id The id of the meal
+     * @responseField title The title of the meal
+     * @responseField description The description of the meal
+     * @responseField allergy The allergy the meal belongs to
+     * @responseField items The url to get meal items
+     * @responseField created_at Timestamp meal was created
+     * @responseField updated_at Timestamp meal was last updated
+     * @responseField deleted_at Timestamp meal was trashed
+     *
+     * @return \Illuminate\Http\Response
      */
     public function getMeals() {
         $collection = Cache::remember(request()->fullUrl(), 60, function() {
@@ -93,9 +169,20 @@ class UserController extends Controller
     }
     
     /**
-     * getUser
+     * GET  api/user
+     * 
+     * Get authenticated user details
+     * 
+     * @authenticated
+     * 
+     * @responseField id The id of the user
+     * @responseField name The name of the user
+     * @responseField email The email of the user
+     * @responseField created_at Timestamp user was created
+     * @responseField updated_at Timestamp user was last updated
+     * @responseField deleted_at Timestamp user was trashed
      *
-     * @return void
+     * @return \Illuminate\Http\Response
      */
     public function getUser() {
         return response()->json(auth()->user(), Response::HTTP_OK);

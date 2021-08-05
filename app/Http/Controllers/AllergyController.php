@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @group Allergy Management
+ * @group Allergy Endpoints
  *
- * APIs for managing allergies
+ * API Endpoints for managing allergies
  */
 class AllergyController extends Controller
 {
@@ -52,6 +52,10 @@ class AllergyController extends Controller
      * 
      * Store a newly created allergy in storage.
      * 
+     * @authenticated
+     * 
+     * @param  \App\Http\Requests\AllergyRequest  $request
+     * 
      * @bodyParam title string required The title of the allergy
      * @bodyParam description string The description of the allergy
      * 
@@ -66,7 +70,7 @@ class AllergyController extends Controller
      * @responseField updated_at Timestamp allergy was last updated
      * @responseField deleted_at Timestamp allergy was trashed
      *
-     * @param  \App\Http\Requests\AllergyRequest  $request
+     * 
      * @return \Illuminate\Http\Response
      */
     public function store(AllergyRequest $request)
@@ -81,6 +85,7 @@ class AllergyController extends Controller
      * GET api/allergies/{id}
      * 
      * Get a specific allergy
+     * 
      * 
      * @param  \App\Models\Allergy  $allergy
      * 
@@ -106,6 +111,8 @@ class AllergyController extends Controller
      * PUT api/allergies/{id}
      * 
      * Update the specified allergy in storage.
+     * 
+     * @authenticated
      *
      * @param  \App\Http\Requests\AllergyRequest  $request
      * @param  \App\Models\Allergy  $allergy
@@ -137,6 +144,8 @@ class AllergyController extends Controller
      * DELETE api/allergies/{id}
      *
      * Remove the specified allergy from storage.
+     * 
+     * @authenticated
      * 
      * @param  \App\Models\Allergy  $allergy
      * 

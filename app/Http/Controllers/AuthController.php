@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @group Auth Endpoints
+ *
+ * API Endpoints for authentication
+ */
 class AuthController extends Controller
 {
     public function register(Request $request) {

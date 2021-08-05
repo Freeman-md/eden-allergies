@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @group Item Management
+ * @group Item Endpoints
  *
- * APIs for managing items
+ * API Endpoints for managing items
  */
 class ItemController extends Controller
 {
@@ -48,6 +48,8 @@ class ItemController extends Controller
      * 
      * Store a newly created item in storage.
      * 
+     * @authenticated
+     * 
      * @param  \Illuminate\Http\Request  $request
      * 
      * @bodyParam title string required The title of the meal
@@ -76,9 +78,9 @@ class ItemController extends Controller
      * GET api/items/{id}
      * 
      * Display the specified item.
+     * 
      *
      * @param  \App\Models\Item  $item
-     * 
      * 
      * @apiResource App\Http\Resources\Item
      * @apiResourceModel App\Models\Item
@@ -101,6 +103,8 @@ class ItemController extends Controller
      * PUT api/items/{id}
      * 
      * Update the specified item in storage.
+     * 
+     * @authenticated
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Item  $item
@@ -133,6 +137,8 @@ class ItemController extends Controller
      * DELETE api/items/{id}
      * 
      * Remove the specified item from storage.
+     * 
+     * @authenticated
      * 
      * @param  \App\Models\Item  $item
      * 

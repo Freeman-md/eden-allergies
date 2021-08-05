@@ -12,9 +12,9 @@ use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @group Meal Management
+ * @group Meal Endpoints
  *
- * APIs for managing meals
+ * API Endpoints for managing meals
  */
 class MealController extends Controller
 {
@@ -53,6 +53,8 @@ class MealController extends Controller
      * POST api/meals
      * 
      * Store a newly created meal in storage.
+     * 
+     * @authenticated
      * 
      * @param  \Illuminate\Http\Request  $request
      * 
@@ -115,6 +117,8 @@ class MealController extends Controller
      * 
      * Update the specified resource in storage.
      * 
+     * @authenticated
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Meal  $meal
      * 
@@ -146,6 +150,8 @@ class MealController extends Controller
      * DELETE api/meals/{id}
      * 
      * Remove the specified resource from storage.
+     * 
+     * @authenticated
      * 
      * @param  \App\Models\Meal  $meal
      * 

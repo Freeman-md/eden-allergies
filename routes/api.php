@@ -41,8 +41,8 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     // Auth User Routes
     Route::group(['prefix' => '/users/allergies'], function() {
         Route::get('', [UserController::class, 'getAllergies']);
-        Route::post('/store', [UserController::class, 'addAllergies']);
-        Route::post('/destroy', [UserController::class, 'removeAllergies']);
+        Route::post('/add', [UserController::class, 'addAllergies']);
+        Route::post('/remove', [UserController::class, 'removeAllergies']);
         Route::get('/meals', [UserController::class, 'getMeals']);
     });
     Route::get('/user', [UserController::class, 'getUser']);
