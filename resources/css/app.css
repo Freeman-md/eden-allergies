@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.responsive-container {
+  @apply px-6 mx-auto max-w-7xl sm:px-10 lg:px-12;
+}
