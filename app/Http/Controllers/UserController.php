@@ -91,4 +91,13 @@ class UserController extends Controller
 
         return response()->json(Meal::collection($meals->all()), Response::HTTP_OK);
     }
+    
+    /**
+     * getUser
+     *
+     * @return void
+     */
+    public function getUser() {
+        return response()->json(auth()->user(), Response::HTTP_OK);
+    }
 }

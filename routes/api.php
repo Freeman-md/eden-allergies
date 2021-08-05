@@ -20,10 +20,6 @@ use Symfony\Component\HttpFoundation\Response;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 // Routes for displaying data [allergies, meals, items] in database
 Route::resource('allergies', AllergyController::class)->only(['index', 'show']);
 Route::resource('meals', MealController::class)->only(['index', 'show']);
@@ -49,6 +45,7 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
         Route::post('/destroy', [UserController::class, 'removeAllergies']);
         Route::get('/meals', [UserController::class, 'getMeals']);
     });
+    Route::get('/user', [UserController::class, 'getUser']);
 
     Route::apiResource('allergies', AllergyController::class)->except(['index', 'show']);
     Route::apiResource('meals', MealController::class)->except(['index', 'show']);
