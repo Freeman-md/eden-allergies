@@ -9,7 +9,7 @@ return [
     /*
      * The HTML <title> for the generated documentation. If this is empty, Scribe will infer it from config('app.name').
      */
-    'title' => config('app.name') . " API Docs",
+    'title' => "Eden Allergies API Documentation",
 
     /*
      * A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
@@ -138,7 +138,7 @@ return [
      * - "static" will generate a static HTMl page in the /public/docs folder,
      * - "laravel" will generate the documentation as a Blade view, so you can add routing and authentication.
      */
-    'type' => 'laravel',
+    'type' => 'static',
 
     /*
      * Settings for `static` type output.
@@ -194,7 +194,7 @@ return [
         /*
          * Set this to true if any endpoints in your API use authentication.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * Set this to true if your API should be authenticated by default. If so, you must also set `enabled` (above) to true.
@@ -230,7 +230,7 @@ return [
          * Any extra authentication-related info for your users. For instance, you can describe how to find or generate their auth credentials.
          * Markdown and HTML are supported.
          */
-        'extra_info' => 'You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.',
+        'extra_info' => 'You can retrieve your token by registering for an account and you will be automatically granted a token',
     ],
 
     /*
@@ -253,6 +253,8 @@ INTRO
     'example_languages' => [
         'bash',
         'javascript',
+        'php',
+        'python'
     ],
 
     /*

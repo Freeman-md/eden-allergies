@@ -1,0 +1,1100 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "edenallergies.herokuapp.com"
+        }
+    ],
+    "info": {
+        "name": "Eden Allergies API Documentation",
+        "_postman_id": "31299a16-f656-4d87-855d-5bff8522357f",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "",
+            "description": "",
+            "item": [
+                {
+                    "name": "api\/{fallbackPlaceholder}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/:fallbackPlaceholder",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/:fallbackPlaceholder",
+                            "variable": [
+                                {
+                                    "id": "fallbackPlaceholder",
+                                    "key": "fallbackPlaceholder",
+                                    "value": "",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "content-type",
+                                    "value": "text\/html; charset=UTF-8"
+                                },
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "set-cookie",
+                                    "value": "XSRF-TOKEN=eyJpdiI6ImRqSzY5bUdLK0pGeG1pYWRmWHRRUWc9PSIsInZhbHVlIjoiOXByVTlObGRtMWJuU0xiQWsxNTdVdkpKZ1lmWnFnYnNXc3g3Q3Y5QitLZjkrMksxQUVYTmM4SmREZmVqSkpxU0h3Z1cwbXd1RTJEZEhUWGpKb3ArWjdraE0rbkdQbkp2S0xpUERaYjRHSXJrT29xOXpOaE5adTRlL2VLZ29YbmEiLCJtYWMiOiIwMmMxNjk5Y2RhNzRkZmFiZGQwNWQ3OTUyM2UwNTEzMzNkOGU4YjQ1Njg2NTNlYzJhYjllNWRlMjZiMDQyZWMzIn0%3D; expires=Fri, 06-Aug-2021 23:57:01 GMT; Max-Age=7200; path=\/; samesite=lax; eden_allergies_session=eyJpdiI6ImVFTGF3K2dDeXpoY29QMkZFcXFVaUE9PSIsInZhbHVlIjoia2FSTm5EdFI5WUlBVVpDT0g1SmRCMW5ldXlUMHFvVWdZMVQzSm9hWTM0ajRtdjhkdTdwN2RtM3ZqOExKUmxwSk9iZGlPLzF6QXg2ajl5OEpYVmVKKzNtbExCM1hLSEJya3pNenVoS0dLanhuSGZuU2ZReHVZMENBZlhaVEdaKzEiLCJtYWMiOiIxZTJjYWNhZmQ2ZjdlNmQzMzQyY2U0MWY3ZmQzYTgxODdhZjQ0ODA3NzliYTRkM2RiOThiZjI4OWU0NDRmOWFlIn0%3D; expires=Fri, 06-Aug-2021 23:57:01 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Eden Allergies<\/title>\n\n        <link rel=\"stylesheet\" href=\"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/5.15.3\/css\/brands.min.css\" integrity=\"sha512-apX8rFN\/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E\/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"\n        \/>\n        <link rel=\"stylesheet\" href=\"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/5.15.3\/css\/all.min.css\" integrity=\"sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM\/gI1w==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"\n        \/>\n        <link rel=\"stylesheet\" href=\"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/5.15.3\/css\/regular.min.css\" integrity=\"sha512-Nqct4Jg8iYwFRs\/C34hjAF5og5HONE2mrrUV1JZUswB+YU7vYSPyIjGMq+EAQYDmOsMuO9VIhKpRUa7GjRKVlg==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" \/>\n\n        <!-- Fonts -->\n        <link href=\"https:\/\/fonts.googleapis.com\/css2?family=Nunito:wght@400;600;700&display=swap\" rel=\"stylesheet\">\n\n        <link rel=\"stylesheet\" href=\"\/assets\/css\/app.css?id=6ca60a6f95f28a9d52d0\">\n\n        <style>\n            body {\n                font-family: 'Nunito', sans-serif;\n            }\n        <\/style>\n    <\/head>\n    <body class=\"antialiased\">\n        <div id=\"app\">\n            <router-view v-slot=\"{Component}\">\n                <transition name=\"route\" mode=\"out-in\">\n                    <component :is=\"Component\"><\/component>\n                <\/transition>\n            <\/router-view>\n        <\/div>\n\n        <script src=\"\/assets\/js\/app.js?id=3a0f8af1cac5ccacdf3e\"><\/script>\n    <\/body>\n<\/html>\n",
+                            "name": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Allergy Endpoints",
+            "description": "\nAPI Endpoints for managing allergies",
+            "item": [
+                {
+                    "name": "GET api\/allergies",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/allergies",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "4",
+                                    "description": "Page number to show.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/allergies?page=4"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Display a listing of allergies",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/allergies\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/allergies\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/allergies\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "6",
+                                    "description": "The ID of the allergy."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get a specific allergy",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/allergies\/{id}\/meals",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/allergies\/:allergy\/meals",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/allergies\/:allergy\/meals",
+                            "variable": [
+                                {
+                                    "id": "allergy",
+                                    "key": "allergy",
+                                    "value": "13",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Display meals for the specified allergy from storage",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":null,\"title\":\"Nesciunt.\",\"description\":\"Ut ea sed natus iusto dolor nostrum repellat autem id rerum voluptatibus culpa nisi.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}},{\"id\":null,\"title\":\"Veritatis.\",\"description\":\"Nisi nulla et blanditiis architecto dolor tenetur error veritatis repudiandae voluptates.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/allergies",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/allergies",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/allergies"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"non\",\"description\":\"rerum\"}"
+                        },
+                        "description": "Store a newly created allergy in storage."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT api\/allergies\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/allergies\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/allergies\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "11",
+                                    "description": "The ID of the allergy."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"possimus\",\"description\":\"aliquid\"}"
+                        },
+                        "description": "Update the specified allergy in storage."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api\/allergies\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/allergies\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/allergies\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "17",
+                                    "description": "The ID of the allergy."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Remove the specified allergy from storage."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
+                            "name": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Auth Endpoints",
+            "description": "\nAPI Endpoints for authentication",
+            "item": [
+                {
+                    "name": "api\/register",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"debitis\",\"email\":\"ut\",\"password\":\"sint\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"sint\",\"password\":\"tempora\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/logout",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/logout",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Item Endpoints",
+            "description": "\nAPI Endpoints for managing items",
+            "item": [
+                {
+                    "name": "GET api\/items",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/items",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/items"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Display a listing of items.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":231,\"title\":\"In ad.\",\"description\":\"Et et quasi dignissimos ut.\",\"category\":\"\",\"created_at\":\"2021-08-06T21:57:01.000000Z\",\"updated_at\":\"2021-08-06T21:57:01.000000Z\",\"deleted_at\":null},{\"id\":232,\"title\":\"Enim.\",\"description\":\"Eos eligendi optio architecto sunt.\",\"category\":\"\",\"created_at\":\"2021-08-06T21:57:01.000000Z\",\"updated_at\":\"2021-08-06T21:57:01.000000Z\",\"deleted_at\":null}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/items\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/items\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/items\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "10",
+                                    "description": "The ID of the item."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Display the specified item.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":233,\"title\":\"Ullam.\",\"description\":\"Sunt fugit alias est facilis asperiores.\",\"category\":\"\",\"created_at\":\"2021-08-06T21:57:01.000000Z\",\"updated_at\":\"2021-08-06T21:57:01.000000Z\",\"deleted_at\":null}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/items",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/items",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/items"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"sit\",\"description\":\"tempora\"}"
+                        },
+                        "description": "Store a newly created item in storage."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":236,\"title\":\"Sequi.\",\"description\":\"Sed aliquam exercitationem id sint eligendi.\",\"category\":\"\",\"created_at\":\"2021-08-06T21:57:01.000000Z\",\"updated_at\":\"2021-08-06T21:57:01.000000Z\",\"deleted_at\":null}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT api\/items\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/items\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/items\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15",
+                                    "description": "The ID of the item."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"fugiat\",\"description\":\"eius\"}"
+                        },
+                        "description": "Update the specified item in storage."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":237,\"title\":\"Est.\",\"description\":\"Quae aspernatur ducimus reiciendis.\",\"category\":\"\",\"created_at\":\"2021-08-06T21:57:01.000000Z\",\"updated_at\":\"2021-08-06T21:57:01.000000Z\",\"deleted_at\":null}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api\/items\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/items\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/items\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "The ID of the item."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Remove the specified item from storage."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":238,\"title\":\"Vitae.\",\"description\":\"Laboriosam nostrum quisquam sequi.\",\"category\":\"\",\"created_at\":\"2021-08-06T21:57:01.000000Z\",\"updated_at\":\"2021-08-06T21:57:01.000000Z\",\"deleted_at\":null}}",
+                            "name": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Meal Endpoints",
+            "description": "\nAPI Endpoints for managing meals",
+            "item": [
+                {
+                    "name": "GET api\/meals",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/meals",
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "12",
+                                    "description": "Page number to show.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/meals?page=12"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Display a listing of meals",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":null,\"title\":\"Fugiat.\",\"description\":\"Aut ipsum quae architecto doloribus quo et tempore at harum assumenda possimus fugiat.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}},{\"id\":null,\"title\":\"Minima.\",\"description\":\"Veritatis non nostrum eius atque explicabo totam magnam nulla vero.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/meals\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/meals\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/meals\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "18",
+                                    "description": "The ID of the meal."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Display the specified meal.",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":null,\"title\":\"Eum animi.\",\"description\":\"Iusto minima a soluta velit quod saepe eaque aperiam.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/meals\/{id}\/items",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/meals\/:meal\/items",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/meals\/:meal\/items",
+                            "variable": [
+                                {
+                                    "id": "meal",
+                                    "key": "meal",
+                                    "value": "20",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get items for the specified meal from storage",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":234,\"title\":\"Sunt.\",\"description\":\"Delectus nihil corporis illum.\",\"category\":\"\",\"created_at\":\"2021-08-06T21:57:01.000000Z\",\"updated_at\":\"2021-08-06T21:57:01.000000Z\",\"deleted_at\":null},{\"id\":235,\"title\":\"Est.\",\"description\":\"Consequatur temporibus a mollitia sequi id.\",\"category\":\"\",\"created_at\":\"2021-08-06T21:57:01.000000Z\",\"updated_at\":\"2021-08-06T21:57:01.000000Z\",\"deleted_at\":null}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/meals",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/meals",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/meals"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"allergy\":\"error\",\"title\":\"delectus\",\"description\":\"neque\"}"
+                        },
+                        "description": "Store a newly created meal in storage."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":null,\"title\":\"Illum.\",\"description\":\"Accusantium omnis sit veniam nesciunt autem eum.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT api\/meals\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/meals\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/meals\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15",
+                                    "description": "The ID of the meal."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"molestias\",\"description\":\"molestiae\"}"
+                        },
+                        "description": "Update the specified resource in storage."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":null,\"title\":\"Possimus.\",\"description\":\"Iure in quia distinctio eligendi possimus quas est aut impedit sit et.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "DELETE api\/meals\/{id}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/meals\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/meals\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15",
+                                    "description": "The ID of the meal."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Remove the specified resource from storage."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":null,\"title\":\"Dolore.\",\"description\":\"Qui consequatur doloribus dicta ut cumque nostrum voluptatum.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
+                            "name": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User Endpoints",
+            "description": "\nAPI Endpoints for managing users",
+            "item": [
+                {
+                    "name": "GET  api\/users\/allergies",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/allergies",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/users\/allergies"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get allergies for authenticated user"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}]}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "GET  api\/users\/allergies\/add",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/allergies\/add",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/users\/allergies\/add"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"allergies\":\"et\"}"
+                        },
+                        "description": "Add allergies for authenticated user"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}]}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "GET  api\/users\/allergies\/remove",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/allergies\/remove",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/users\/allergies\/remove"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"allergies\":\"ad\"}"
+                        },
+                        "description": "Remove allergies for authenticated user"
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}]}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/users\/allergies\/meals",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/users\/allergies\/meals",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/users\/allergies\/meals"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get Meal Recommendations",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":null,\"title\":\"Pariatur.\",\"description\":\"Dolor hic eveniet est voluptatem iure aut.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}},{\"id\":null,\"title\":\"Et est.\",\"description\":\"Rerum cum praesentium possimus iste ut rem.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}]}",
+                            "name": null
+                        }
+                    ]
+                },
+                {
+                    "name": "GET  api\/user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get authenticated user details"
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated\"}",
+                            "name": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer"
+    }
+}

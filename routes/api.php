@@ -58,5 +58,5 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
 // Fallback route
 Route::fallback(function(){
     return response()->json([
-        'message' => 'Page Not Found. If error persists, contact info@myapp.com'], Response::HTTP_NOT_FOUND);
+        'message' => 'Page Not Found. If error persists, contact info@edenallergies.herokuapp.com'], Response::HTTP_NOT_FOUND);
 });

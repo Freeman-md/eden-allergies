@@ -23,19 +23,19 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: nostrum
+        example: debitis
         type: string
       email:
         name: email
         description: ''
         required: true
-        example: illum
+        example: ut
         type: string
       password:
         name: password
         description: ''
         required: true
-        example: autem
+        example: sint
         type: string
     responses: []
     responseFields: []
@@ -57,13 +57,13 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: debitis
+        example: sint
         type: string
       password:
         name: password
         description: ''
         required: true
-        example: qui
+        example: tempora
         type: string
     responses: []
     responseFields: []

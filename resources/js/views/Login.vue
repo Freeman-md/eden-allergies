@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="flex flex-col w-2/3 py-4 space-y-2 responsive-container">
+    <div class="flex flex-col sm:w-2/3 py-4 space-y-2 responsive-container">
       <span class="text-2xl font-bold">Login</span>
       <form novalidate class="flex flex-col items-start w-full space-y-2" @submit.prevent="login">
 

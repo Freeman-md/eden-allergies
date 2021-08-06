@@ -1,0 +1,2018 @@
+openapi: 3.0.3
+info:
+  title: 'Eden Allergies API Documentation'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://edenallergies.herokuapp.com'
+paths:
+  '/api/{fallbackPlaceholder}':
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Eden Allergies</title>\n\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css\" integrity=\"sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"\n        />\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" integrity=\"sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"\n        />\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css\" integrity=\"sha512-Nqct4Jg8iYwFRs/C34hjAF5og5HONE2mrrUV1JZUswB+YU7vYSPyIjGMq+EAQYDmOsMuO9VIhKpRUa7GjRKVlg==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />\n\n        <!-- Fonts -->\n        <link href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\" rel=\"stylesheet\">\n\n        <link rel=\"stylesheet\" href=\"/assets/css/app.css?id=6ca60a6f95f28a9d52d0\">\n\n        <style>\n            body {\n                font-family: 'Nunito', sans-serif;\n            }\n        </style>\n    </head>\n    <body class=\"antialiased\">\n        <div id=\"app\">\n            <router-view v-slot=\"{Component}\">\n                <transition name=\"route\" mode=\"out-in\">\n                    <component :is=\"Component\"></component>\n                </transition>\n            </router-view>\n        </div>\n\n        <script src=\"/assets/js/app.js?id=3a0f8af1cac5ccacdf3e\"></script>\n    </body>\n</html>\n"
+      tags:
+        - ''
+      security: []
+    parameters:
+      -
+        in: path
+        name: fallbackPlaceholder
+        description: ''
+        example: ''
+        required: true
+        schema:
+          type: string
+  /api/allergies:
+    get:
+      summary: 'GET api/allergies'
+      description: 'Display a listing of allergies'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number to show.'
+          example: 4
+          required: false
+          schema:
+            type: integer
+            description: 'Page number to show.'
+            example: 4
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                    -
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                  links:
+                    first: '/?page=1'
+                    last: '/?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: '/?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: /
+                    per_page: '10'
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        title: null
+                        description: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                      -
+                        id: null
+                        title: null
+                        description: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                    items:
+                      type: object
+                  links:
+                    type: object
+                    example:
+                      first: '/?page=1'
+                      last: '/?page=1'
+                      prev: null
+                      next: null
+                  meta:
+                    type: object
+                    example:
+                      current_page: 1
+                      from: 1
+                      last_page: 1
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: '/?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      path: /
+                      per_page: '10'
+                      to: 2
+                      total: 2
+      tags:
+        - 'Allergy Endpoints'
+      security: []
+    post:
+      summary: 'POST api/allergies'
+      description: 'Store a newly created allergy in storage.'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    title: null
+                    description: null
+                    created_at: null
+                    updated_at: null
+                    deleted_at: null
+                    links:
+                      meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+      tags:
+        - 'Allergy Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The title of the allergy'
+                  example: non
+                description:
+                  type: string
+                  description: 'The description of the allergy'
+                  example: rerum
+              required:
+                - title
+  '/api/allergies/{id}':
+    get:
+      summary: 'GET api/allergies/{id}'
+      description: 'Get a specific allergy'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    title: null
+                    description: null
+                    created_at: null
+                    updated_at: null
+                    deleted_at: null
+                    links:
+                      meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+      tags:
+        - 'Allergy Endpoints'
+      security: []
+    put:
+      summary: 'PUT api/allergies/{id}'
+      description: 'Update the specified allergy in storage.'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    title: null
+                    description: null
+                    created_at: null
+                    updated_at: null
+                    deleted_at: null
+                    links:
+                      meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+      tags:
+        - 'Allergy Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The new title of the allergy'
+                  example: possimus
+                description:
+                  type: string
+                  description: 'The new description of the allergy'
+                  example: aliquid
+              required:
+                - title
+    delete:
+      summary: 'DELETE api/allergies/{id}'
+      description: 'Remove the specified allergy from storage.'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    title: null
+                    description: null
+                    created_at: null
+                    updated_at: null
+                    deleted_at: null
+                    links:
+                      meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+      tags:
+        - 'Allergy Endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the allergy.'
+        example: 6
+        required: true
+        schema:
+          type: integer
+  '/api/allergies/{allergy}/meals':
+    get:
+      summary: 'GET api/allergies/{id}/meals'
+      description: 'Display meals for the specified allergy from storage'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      title: Nesciunt.
+                      description: 'Ut ea sed natus iusto dolor nostrum repellat autem id rerum voluptatibus culpa nisi.'
+                      allergy: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                    -
+                      id: null
+                      title: Veritatis.
+                      description: 'Nisi nulla et blanditiis architecto dolor tenetur error veritatis repudiandae voluptates.'
+                      allergy: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                  links:
+                    first: '/?page=1'
+                    last: '/?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: '/?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: /
+                    per_page: '10'
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        title: Nesciunt.
+                        description: 'Ut ea sed natus iusto dolor nostrum repellat autem id rerum voluptatibus culpa nisi.'
+                        allergy: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                      -
+                        id: null
+                        title: Veritatis.
+                        description: 'Nisi nulla et blanditiis architecto dolor tenetur error veritatis repudiandae voluptates.'
+                        allergy: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                    items:
+                      type: object
+                  links:
+                    type: object
+                    example:
+                      first: '/?page=1'
+                      last: '/?page=1'
+                      prev: null
+                      next: null
+                  meta:
+                    type: object
+                    example:
+                      current_page: 1
+                      from: 1
+                      last_page: 1
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: '/?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      path: /
+                      per_page: '10'
+                      to: 2
+                      total: 2
+      tags:
+        - 'Allergy Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: allergy
+        description: ''
+        example: 13
+        required: true
+        schema:
+          type: integer
+  /api/register:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Auth Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: debitis
+                email:
+                  type: string
+                  description: ''
+                  example: ut
+                password:
+                  type: string
+                  description: ''
+                  example: sint
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/login:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Auth Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: sint
+                password:
+                  type: string
+                  description: ''
+                  example: tempora
+              required:
+                - email
+                - password
+      security: []
+  /api/logout:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Auth Endpoints'
+      security: []
+  /api/items:
+    get:
+      summary: 'GET api/items'
+      description: 'Display a listing of items.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 231
+                      title: 'In ad.'
+                      description: 'Et et quasi dignissimos ut.'
+                      category: ''
+                      created_at: '2021-08-06T21:57:01.000000Z'
+                      updated_at: '2021-08-06T21:57:01.000000Z'
+                      deleted_at: null
+                    -
+                      id: 232
+                      title: Enim.
+                      description: 'Eos eligendi optio architecto sunt.'
+                      category: ''
+                      created_at: '2021-08-06T21:57:01.000000Z'
+                      updated_at: '2021-08-06T21:57:01.000000Z'
+                      deleted_at: null
+                  links:
+                    first: '/?page=1'
+                    last: '/?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: '/?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: /
+                    per_page: '10'
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 231
+                        title: 'In ad.'
+                        description: 'Et et quasi dignissimos ut.'
+                        category: ''
+                        created_at: '2021-08-06T21:57:01.000000Z'
+                        updated_at: '2021-08-06T21:57:01.000000Z'
+                        deleted_at: null
+                      -
+                        id: 232
+                        title: Enim.
+                        description: 'Eos eligendi optio architecto sunt.'
+                        category: ''
+                        created_at: '2021-08-06T21:57:01.000000Z'
+                        updated_at: '2021-08-06T21:57:01.000000Z'
+                        deleted_at: null
+                    items:
+                      type: object
+                  links:
+                    type: object
+                    example:
+                      first: '/?page=1'
+                      last: '/?page=1'
+                      prev: null
+                      next: null
+                  meta:
+                    type: object
+                    example:
+                      current_page: 1
+                      from: 1
+                      last_page: 1
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: '/?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      path: /
+                      per_page: '10'
+                      to: 2
+                      total: 2
+      tags:
+        - 'Item Endpoints'
+      security: []
+    post:
+      summary: 'POST api/items'
+      description: 'Store a newly created item in storage.'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 236
+                    title: Sequi.
+                    description: 'Sed aliquam exercitationem id sint eligendi.'
+                    category: ''
+                    created_at: '2021-08-06T21:57:01.000000Z'
+                    updated_at: '2021-08-06T21:57:01.000000Z'
+                    deleted_at: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 236
+                      title: Sequi.
+                      description: 'Sed aliquam exercitationem id sint eligendi.'
+                      category: ''
+                      created_at: '2021-08-06T21:57:01.000000Z'
+                      updated_at: '2021-08-06T21:57:01.000000Z'
+                      deleted_at: null
+      tags:
+        - 'Item Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The title of the meal'
+                  example: sit
+                description:
+                  type: string
+                  description: 'The description of the meal'
+                  example: tempora
+              required:
+                - title
+  '/api/items/{id}':
+    get:
+      summary: 'GET api/items/{id}'
+      description: 'Display the specified item.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 233
+                    title: Ullam.
+                    description: 'Sunt fugit alias est facilis asperiores.'
+                    category: ''
+                    created_at: '2021-08-06T21:57:01.000000Z'
+                    updated_at: '2021-08-06T21:57:01.000000Z'
+                    deleted_at: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 233
+                      title: Ullam.
+                      description: 'Sunt fugit alias est facilis asperiores.'
+                      category: ''
+                      created_at: '2021-08-06T21:57:01.000000Z'
+                      updated_at: '2021-08-06T21:57:01.000000Z'
+                      deleted_at: null
+      tags:
+        - 'Item Endpoints'
+      security: []
+    put:
+      summary: 'PUT api/items/{id}'
+      description: 'Update the specified item in storage.'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 237
+                    title: Est.
+                    description: 'Quae aspernatur ducimus reiciendis.'
+                    category: ''
+                    created_at: '2021-08-06T21:57:01.000000Z'
+                    updated_at: '2021-08-06T21:57:01.000000Z'
+                    deleted_at: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 237
+                      title: Est.
+                      description: 'Quae aspernatur ducimus reiciendis.'
+                      category: ''
+                      created_at: '2021-08-06T21:57:01.000000Z'
+                      updated_at: '2021-08-06T21:57:01.000000Z'
+                      deleted_at: null
+      tags:
+        - 'Item Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The new title of the meal'
+                  example: fugiat
+                description:
+                  type: string
+                  description: 'The new description of the meal'
+                  example: eius
+              required:
+                - title
+    delete:
+      summary: 'DELETE api/items/{id}'
+      description: 'Remove the specified item from storage.'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 238
+                    title: Vitae.
+                    description: 'Laboriosam nostrum quisquam sequi.'
+                    category: ''
+                    created_at: '2021-08-06T21:57:01.000000Z'
+                    updated_at: '2021-08-06T21:57:01.000000Z'
+                    deleted_at: null
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 238
+                      title: Vitae.
+                      description: 'Laboriosam nostrum quisquam sequi.'
+                      category: ''
+                      created_at: '2021-08-06T21:57:01.000000Z'
+                      updated_at: '2021-08-06T21:57:01.000000Z'
+                      deleted_at: null
+      tags:
+        - 'Item Endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the item.'
+        example: 10
+        required: true
+        schema:
+          type: integer
+  /api/meals:
+    get:
+      summary: 'GET api/meals'
+      description: 'Display a listing of meals'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Page number to show.'
+          example: 12
+          required: false
+          schema:
+            type: integer
+            description: 'Page number to show.'
+            example: 12
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      title: Fugiat.
+                      description: 'Aut ipsum quae architecto doloribus quo et tempore at harum assumenda possimus fugiat.'
+                      allergy: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                    -
+                      id: null
+                      title: Minima.
+                      description: 'Veritatis non nostrum eius atque explicabo totam magnam nulla vero.'
+                      allergy: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                  links:
+                    first: '/?page=1'
+                    last: '/?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: '/?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: /
+                    per_page: '10'
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        title: Fugiat.
+                        description: 'Aut ipsum quae architecto doloribus quo et tempore at harum assumenda possimus fugiat.'
+                        allergy: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                      -
+                        id: null
+                        title: Minima.
+                        description: 'Veritatis non nostrum eius atque explicabo totam magnam nulla vero.'
+                        allergy: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                    items:
+                      type: object
+                  links:
+                    type: object
+                    example:
+                      first: '/?page=1'
+                      last: '/?page=1'
+                      prev: null
+                      next: null
+                  meta:
+                    type: object
+                    example:
+                      current_page: 1
+                      from: 1
+                      last_page: 1
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: '/?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      path: /
+                      per_page: '10'
+                      to: 2
+                      total: 2
+      tags:
+        - 'Meal Endpoints'
+      security: []
+    post:
+      summary: 'POST api/meals'
+      description: 'Store a newly created meal in storage.'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    title: Illum.
+                    description: 'Accusantium omnis sit veniam nesciunt autem eum.'
+                    allergy: null
+                    created_at: null
+                    updated_at: null
+                    deleted_at: null
+                    links:
+                      items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: null
+                      title: Illum.
+                      description: 'Accusantium omnis sit veniam nesciunt autem eum.'
+                      allergy: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+      tags:
+        - 'Meal Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                allergy:
+                  type: string
+                  description: ''
+                  example: error
+                title:
+                  type: string
+                  description: 'The new title of the meal'
+                  example: delectus
+                description:
+                  type: string
+                  description: 'The new description of the meal'
+                  example: neque
+              required:
+                - allergy
+                - title
+  '/api/meals/{id}':
+    get:
+      summary: 'GET api/meals/{id}'
+      description: 'Display the specified meal.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    title: 'Eum animi.'
+                    description: 'Iusto minima a soluta velit quod saepe eaque aperiam.'
+                    allergy: null
+                    created_at: null
+                    updated_at: null
+                    deleted_at: null
+                    links:
+                      items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: null
+                      title: 'Eum animi.'
+                      description: 'Iusto minima a soluta velit quod saepe eaque aperiam.'
+                      allergy: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+      tags:
+        - 'Meal Endpoints'
+      security: []
+    put:
+      summary: 'PUT api/meals/{id}'
+      description: 'Update the specified resource in storage.'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    title: Possimus.
+                    description: 'Iure in quia distinctio eligendi possimus quas est aut impedit sit et.'
+                    allergy: null
+                    created_at: null
+                    updated_at: null
+                    deleted_at: null
+                    links:
+                      items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: null
+                      title: Possimus.
+                      description: 'Iure in quia distinctio eligendi possimus quas est aut impedit sit et.'
+                      allergy: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+      tags:
+        - 'Meal Endpoints'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The new title of the meal'
+                  example: molestias
+                description:
+                  type: string
+                  description: 'The new description of the meal'
+                  example: molestiae
+              required:
+                - title
+    delete:
+      summary: 'DELETE api/meals/{id}'
+      description: 'Remove the specified resource from storage.'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: null
+                    title: Dolore.
+                    description: 'Qui consequatur doloribus dicta ut cumque nostrum voluptatum.'
+                    allergy: null
+                    created_at: null
+                    updated_at: null
+                    deleted_at: null
+                    links:
+                      items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: null
+                      title: Dolore.
+                      description: 'Qui consequatur doloribus dicta ut cumque nostrum voluptatum.'
+                      allergy: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+      tags:
+        - 'Meal Endpoints'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the meal.'
+        example: 18
+        required: true
+        schema:
+          type: integer
+  '/api/meals/{meal}/items':
+    get:
+      summary: 'GET api/meals/{id}/items'
+      description: 'Get items for the specified meal from storage'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 234
+                      title: Sunt.
+                      description: 'Delectus nihil corporis illum.'
+                      category: ''
+                      created_at: '2021-08-06T21:57:01.000000Z'
+                      updated_at: '2021-08-06T21:57:01.000000Z'
+                      deleted_at: null
+                    -
+                      id: 235
+                      title: Est.
+                      description: 'Consequatur temporibus a mollitia sequi id.'
+                      category: ''
+                      created_at: '2021-08-06T21:57:01.000000Z'
+                      updated_at: '2021-08-06T21:57:01.000000Z'
+                      deleted_at: null
+                  links:
+                    first: '/?page=1'
+                    last: '/?page=1'
+                    prev: null
+                    next: null
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 1
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: '/?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: null
+                        label: 'Next &raquo;'
+                        active: false
+                    path: /
+                    per_page: '10'
+                    to: 2
+                    total: 2
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 234
+                        title: Sunt.
+                        description: 'Delectus nihil corporis illum.'
+                        category: ''
+                        created_at: '2021-08-06T21:57:01.000000Z'
+                        updated_at: '2021-08-06T21:57:01.000000Z'
+                        deleted_at: null
+                      -
+                        id: 235
+                        title: Est.
+                        description: 'Consequatur temporibus a mollitia sequi id.'
+                        category: ''
+                        created_at: '2021-08-06T21:57:01.000000Z'
+                        updated_at: '2021-08-06T21:57:01.000000Z'
+                        deleted_at: null
+                    items:
+                      type: object
+                  links:
+                    type: object
+                    example:
+                      first: '/?page=1'
+                      last: '/?page=1'
+                      prev: null
+                      next: null
+                  meta:
+                    type: object
+                    example:
+                      current_page: 1
+                      from: 1
+                      last_page: 1
+                      links:
+                        -
+                          url: null
+                          label: '&laquo; Previous'
+                          active: false
+                        -
+                          url: '/?page=1'
+                          label: '1'
+                          active: true
+                        -
+                          url: null
+                          label: 'Next &raquo;'
+                          active: false
+                      path: /
+                      per_page: '10'
+                      to: 2
+                      total: 2
+      tags:
+        - 'Meal Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: meal
+        description: ''
+        example: 20
+        required: true
+        schema:
+          type: integer
+  /api/users/allergies:
+    get:
+      summary: 'GET  api/users/allergies'
+      description: 'Get allergies for authenticated user'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                    -
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        title: null
+                        description: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                      -
+                        id: null
+                        title: null
+                        description: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                    items:
+                      type: object
+      tags:
+        - 'User Endpoints'
+  /api/users/allergies/add:
+    post:
+      summary: 'GET  api/users/allergies/add'
+      description: 'Add allergies for authenticated user'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                    -
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        title: null
+                        description: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                      -
+                        id: null
+                        title: null
+                        description: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                    items:
+                      type: object
+      tags:
+        - 'User Endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                allergies:
+                  type: required
+                  description: 'array Array of allergy ids to add'
+                  example: et
+  /api/users/allergies/remove:
+    post:
+      summary: 'GET  api/users/allergies/remove'
+      description: 'Remove allergies for authenticated user'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                    -
+                      id: null
+                      title: null
+                      description: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        title: null
+                        description: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                      -
+                        id: null
+                        title: null
+                        description: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
+                    items:
+                      type: object
+      tags:
+        - 'User Endpoints'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                allergies:
+                  type: required
+                  description: 'array Array of allergy ids to remove'
+                  example: ad
+  /api/users/allergies/meals:
+    get:
+      summary: 'GET api/users/allergies/meals'
+      description: 'Get Meal Recommendations'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: null
+                      title: Pariatur.
+                      description: 'Dolor hic eveniet est voluptatem iure aut.'
+                      allergy: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                    -
+                      id: null
+                      title: 'Et est.'
+                      description: 'Rerum cum praesentium possimus iste ut rem.'
+                      allergy: null
+                      created_at: null
+                      updated_at: null
+                      deleted_at: null
+                      links:
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: null
+                        title: Pariatur.
+                        description: 'Dolor hic eveniet est voluptatem iure aut.'
+                        allergy: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                      -
+                        id: null
+                        title: 'Et est.'
+                        description: 'Rerum cum praesentium possimus iste ut rem.'
+                        allergy: null
+                        created_at: null
+                        updated_at: null
+                        deleted_at: null
+                        links:
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
+                    items:
+                      type: object
+      tags:
+        - 'User Endpoints'
+      security: []
+  /api/user:
+    get:
+      summary: 'GET  api/user'
+      description: 'Get authenticated user details'
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {YOUR_AUTH_KEY}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated
+      tags:
+        - 'User Endpoints'
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []

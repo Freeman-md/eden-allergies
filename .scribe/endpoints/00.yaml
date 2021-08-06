@@ -23,10 +23,48 @@ endpoints:
     bodyParameters: []
     responses:
       -
-        status: 404
-        content: '{"message":"The specified URL could not be found"}'
+        status: 200
+        content: |
+          <!DOCTYPE html>
+          <html lang="en">
+              <head>
+                  <meta charset="utf-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+                  <title>Eden Allergies</title>
+
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+                  />
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+                  />
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css" integrity="sha512-Nqct4Jg8iYwFRs/C34hjAF5og5HONE2mrrUV1JZUswB+YU7vYSPyIjGMq+EAQYDmOsMuO9VIhKpRUa7GjRKVlg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+                  <!-- Fonts -->
+                  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+                  <link rel="stylesheet" href="/assets/css/app.css?id=6ca60a6f95f28a9d52d0">
+
+                  <style>
+                      body {
+                          font-family: 'Nunito', sans-serif;
+                      }
+                  </style>
+              </head>
+              <body class="antialiased">
+                  <div id="app">
+                      <router-view v-slot="{Component}">
+                          <transition name="route" mode="out-in">
+                              <component :is="Component"></component>
+                          </transition>
+                      </router-view>
+                  </div>
+
+                  <script src="/assets/js/app.js?id=3a0f8af1cac5ccacdf3e"></script>
+              </body>
+          </html>
         headers:
+          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          content-type: application/json
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImRqSzY5bUdLK0pGeG1pYWRmWHRRUWc9PSIsInZhbHVlIjoiOXByVTlObGRtMWJuU0xiQWsxNTdVdkpKZ1lmWnFnYnNXc3g3Q3Y5QitLZjkrMksxQUVYTmM4SmREZmVqSkpxU0h3Z1cwbXd1RTJEZEhUWGpKb3ArWjdraE0rbkdQbkp2S0xpUERaYjRHSXJrT29xOXpOaE5adTRlL2VLZ29YbmEiLCJtYWMiOiIwMmMxNjk5Y2RhNzRkZmFiZGQwNWQ3OTUyM2UwNTEzMzNkOGU4YjQ1Njg2NTNlYzJhYjllNWRlMjZiMDQyZWMzIn0%3D; expires=Fri, 06-Aug-2021 23:57:01 GMT; Max-Age=7200; path=/; samesite=lax; eden_allergies_session=eyJpdiI6ImVFTGF3K2dDeXpoY29QMkZFcXFVaUE9PSIsInZhbHVlIjoia2FSTm5EdFI5WUlBVVpDT0g1SmRCMW5ldXlUMHFvVWdZMVQzSm9hWTM0ajRtdjhkdTdwN2RtM3ZqOExKUmxwSk9iZGlPLzF6QXg2ajl5OEpYVmVKKzNtbExCM1hLSEJya3pNenVoS0dLanhuSGZuU2ZReHVZMENBZlhaVEdaKzEiLCJtYWMiOiIxZTJjYWNhZmQ2ZjdlNmQzMzQyY2U0MWY3ZmQzYTgxODdhZjQ0ODA3NzliYTRkM2RiOThiZjI4OWU0NDRmOWFlIn0%3D; expires=Fri, 06-Aug-2021 23:57:01 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
     responseFields: []
