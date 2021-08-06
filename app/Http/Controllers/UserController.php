@@ -157,7 +157,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getMeals() {
-        $collection = Cache::remember(request()->fullUrl(), 60, function() {
+        $collection = Cache::remember(request()->fullUrl(), 20, function() {
             return $this->userAllergies()->map(function($allergy) {
                 return $allergy->meals()->inRandomOrder()->get();
             });

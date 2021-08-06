@@ -1,13 +1,35 @@
 <template>
   <Layout>
-    <div class="responsive-container">This is the index page</div>
+
+    <!-- Allergies -->
+    <Allergies :allergies="allergies" />
+
+    <!-- Meals -->
+    <Meals :meals="meals" />
+
   </Layout>
 </template>
 
 <script>
-import Layout from '../shared/Layout.vue'
+import { mapGetters } from 'vuex'
+import Layout from '../Layouts/Layout.vue'
+import Search from '../components/Search.vue'
+import Allergies from '../components/Allergies.vue'
+import Meals from '../components/Meals.vue'
 export default {
   name: 'Index',
-  components: { Layout, }
+  components: { Layout, Search, Allergies, Meals},
+  async beforeCreate() {
+    await this.$store.dispatch('allergies/getAllergies');
+    await this.$store.dispatch('users/getMealRecommendations');
+  },
+  computed: {
+    ...mapGetters('allergies', {
+      allergies: 'getAllergies',
+    }),
+    ...mapGetters('users', {
+      meals: 'getMealRecommendations'
+    })
+  }
 }
 </script>

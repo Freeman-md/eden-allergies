@@ -5,3 +5,22 @@
 .responsive-container {
   @apply px-6 mx-auto max-w-7xl sm:px-10 lg:px-12;
 }
+
+/* Route Transitions */
+.route-enter-from {
+  opacity: 0;
+  transform: translate(-20px);
+}
+
+.route-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.route-leave-to {
+  opacity: 0;
+  transform: translate(20px);
+}
+
+.route-leave-active {
+  transition: all 0.3s ease-in;
+}
