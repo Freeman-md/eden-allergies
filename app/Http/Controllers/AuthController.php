@@ -41,8 +41,8 @@ class AuthController extends Controller
      */
     public function register(Request $request) {
         $fields = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|string|unique:users,email',
+            'name' => 'required|string|min:4',
+            'email' => 'required|string|email|unique:users,email',
             'password' => 'required|string|confirmed'
         ]);
 
@@ -52,7 +52,7 @@ class AuthController extends Controller
             'password' => bcrypt($fields['password'])
         ]);
 
-        $token = $user->createToken('myapptoken')->plainTextToken;
+        $token = $user->createToken('authToken')->plainTextToken;
 
         $response = [
             'user' => $user,
@@ -86,7 +86,7 @@ class AuthController extends Controller
      */
     public function login(Request $request) {
         $fields = $request->validate([
-            'email' => 'required|string',
+            'email' => 'required|string|email',
             'password' => 'required|string'
         ]);
 
@@ -100,7 +100,7 @@ class AuthController extends Controller
             ], Response::HTTP_UNAUTHORIZED);
         }
 
-        $token = $user->createToken('myapptoken')->plainTextToken;
+        $token = $user->createToken('authToken')->plainTextToken;
 
         $response = [
             'user' => $user,

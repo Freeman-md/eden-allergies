@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-start py-4 space-y-1 responsive-container">
     <span class="text-lg font-bold">Latest Allergies</span>
-    <div v-if="allergies"  class="grid w-full grid-cols-3 gap-4">
+    <div v-if="allergies"  class="grid w-full gap-4 sm:grid-cols-3">
       <div 
         v-for="(allergy, index) in allergies" 
         :key="index"

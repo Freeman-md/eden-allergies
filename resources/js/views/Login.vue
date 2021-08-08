@@ -1,7 +1,20 @@
 <template>
   <Layout>
-    <div class="flex flex-col sm:w-2/3 py-4 space-y-2 responsive-container">
+    <div class="flex flex-col py-4 space-y-2 sm:w-2/3 responsive-container">
       <span class="text-2xl font-bold">Login</span>
+
+      <div class="flex flex-col items-start space-y-1">
+        <span>Test Details [You can still login with your credentials]</span>
+        <div class="flex flex-col items-start space-y-0.5">
+          <span>Email Address: another@gmail.com</span>
+          <span>Password: 123456</span>
+        </div>
+      </div>
+      
+      <div v-show="errors.server" class="px-2 py-2 text-base font-semibold text-black bg-red-500 border-l-4 border-red-800 rounded-l-md">
+        <span>{{ errors.server }}</span>
+      </div>  
+
       <form novalidate class="flex flex-col items-start w-full space-y-2" @submit.prevent="login">
 
         <div class="flex flex-col items-start w-full space-y-0.5">
@@ -33,27 +46,28 @@ export default {
   name: 'Login',
   components: { Layout, },
   data: () => ({
-    email: '',
-    password: '',
+    email: 'another@gmail.com',
+    password: '123456',
     errors: {
       email: '',
       password: '',
+      server: ''
     }
   }),
   watch: {
     email() {
       const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
       if (!this.email) {
-        this.errors.email = 'Please enter your email address'
+        this.errors.email = 'The email field is required.'
       } else if (!regex.test(this.email)) {
-        this.errors.email = 'Please enter a valid email address'
+        this.errors.email = 'The email must be a valid email address'
       } else {
         this.errors.email = ''
       }
     },
     password() {
       if (!this.password) {
-        this.errors.password = 'Please enter your password'
+        this.errors.password = 'The password field is required.'
       } else {
         this.errors.password = ''
       }
@@ -65,11 +79,29 @@ export default {
     }
   },
   methods: {
-    login() {
-      this.$store.dispatch('login', {
+    async login() {
+      const error = await this.$store.dispatch('login', {
         email: this.email,
         password: this.password
-      });
+      })
+      .then(() => {
+        this.errors.server = ''
+        this.email = ''
+        this.password = ''
+      })
+      .catch(err => err.response.data);
+      
+      if (error) {
+        const errors = error.errors
+        if (errors) {
+          if (errors.email) this.errors.email = errors.email[0]
+          if (errors.password) this.errors.password = errors.password[0]
+        } 
+        
+        if (error.message && !error.errors) {
+          this.errors.server = error.message
+        }
+      }
     }
   }
 }

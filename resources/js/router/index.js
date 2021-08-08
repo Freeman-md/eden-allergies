@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store/index'
 
 import Index from '../views/Index.vue'
 import Allergy from '../views/Allergy.vue'
@@ -47,5 +48,27 @@ const router = new VueRouter({
   mode: 'history',
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  if ((to.name !== 'Login' && to.name !== 'Register') && !store.getters.authenticated) {
+    next({name: 'Login'})
+  } else if (store.getters.authenticated) {
+    next()
+  } else {
+    next()
+  }
+})
+
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+    NProgress.start()
+  }
+  next()
+})
+
+router.afterEach((to, from) => {
+  NProgress.done()
+})
+
 
 export default router

@@ -19,7 +19,7 @@ import Meals from '../components/Meals.vue'
 export default {
   name: 'Index',
   components: { Layout, Search, Allergies, Meals},
-  async beforeCreate() {
+  async beforeMount() {
     await this.$store.dispatch('allergies/getAllergies');
     await this.$store.dispatch('users/getMealRecommendations');
   },
@@ -29,6 +29,9 @@ export default {
     }),
     ...mapGetters('users', {
       meals: 'getMealRecommendations'
+    }),
+    ...mapGetters({
+      authenticated: 'authenticated'
     })
   }
 }

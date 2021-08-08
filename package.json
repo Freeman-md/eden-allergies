@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "autoprefixer": "^10.3.1",
+        "nprogress": "^0.2.0",
         "postcss": "^8.3.6",
         "tailwindcss": "^2.2.7",
         "vue-router": "^3.5.2",

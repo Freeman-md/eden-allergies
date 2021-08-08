@@ -9,4 +9,9 @@ const app = new Vue({
     el: '#app',
     router,
     store,
+    beforeCreate() {
+        if (localStorage.getItem('authToken')) {
+            store.dispatch('getAuthUser')
+        }
+    }
 });

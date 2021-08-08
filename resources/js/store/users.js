@@ -25,12 +25,11 @@ export const users = {
     getMealRecommendations: async ({commit}) => {
       commit('setLoading', { value: true })
       const response = await axios.get(`/api/users/allergies/meals`)
-      const data = await response.data
-      const meals = data.data
+      const meals = await response.data
 
       commit('setMealRecommendations', { meals })
 
       commit('setLoading', { value: false })
-    }
+    },
   },
 }
