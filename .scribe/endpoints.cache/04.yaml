@@ -22,13 +22,13 @@ endpoints:
         name: page
         description: 'Page number to show.'
         required: false
-        example: 15
+        example: 11
         type: integer
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":"Aut sunt.","description":"Qui quas corporis aut voluptatem et quas aut debitis.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/localhost:8000\/api\/meals\/\/items\/"}},{"id":null,"title":"Dolores.","description":"Accusantium dolor sed voluptatum et et qui nobis earum quia praesentium.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/localhost:8000\/api\/meals\/\/items\/"}}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
+        content: '{"data":[{"id":null,"title":"Assumenda.","description":"Ea blanditiis dolorem ut voluptates facilis doloribus nihil impedit veritatis consequatur natus non.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}},{"id":null,"title":"Qui.","description":"In aspernatur et qui voluptates officia accusamus debitis sed voluptate aut.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
         headers: []
         description: null
     responseFields:
@@ -87,7 +87,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"title":"Itaque.","description":"Quasi ut sint impedit aliquid magni minima et.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/localhost:8000\/api\/meals\/\/items\/"}}}'
+        content: '{"data":{"id":null,"title":"Qui in.","description":"Et inventore quidem minus maiores aut officia labore voluptas ea nostrum minus excepturi.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}}}'
         headers: []
         description: null
     responseFields:
@@ -139,14 +139,14 @@ endpoints:
         name: meal
         description: ''
         required: true
-        example: 3
+        example: 16
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":291,"title":"Aut ut.","description":"Ea saepe vel.","category":"","created_at":"2021-08-08T12:52:06.000000Z","updated_at":"2021-08-08T12:52:06.000000Z","deleted_at":null},{"id":292,"title":"Qui.","description":"Eum voluptas dolorem iste eum aut.","category":"","created_at":"2021-08-08T12:52:06.000000Z","updated_at":"2021-08-08T12:52:06.000000Z","deleted_at":null}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
+        content: '{"data":[{"id":300,"title":"Nihil.","description":"Sapiente sit esse voluptas ipsum minima.","category":"","created_at":"2021-08-08T21:50:16.000000Z","updated_at":"2021-08-08T21:50:16.000000Z","deleted_at":null},{"id":301,"title":"Ab.","description":"Vero libero eligendi.","category":"","created_at":"2021-08-08T21:50:16.000000Z","updated_at":"2021-08-08T21:50:16.000000Z","deleted_at":null}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
         headers: []
         description: null
     responseFields:
@@ -193,24 +193,24 @@ endpoints:
         name: allergy
         description: ''
         required: true
-        example: ea
+        example: iusto
         type: string
       title:
         name: title
         description: 'The new title of the meal'
         required: true
-        example: sed
+        example: nulla
         type: string
       description:
         name: description
         description: 'The new description of the meal'
         required: false
-        example: quia
+        example: ab
         type: string
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"title":"Omnis.","description":"Vitae provident facilis in assumenda saepe rerum et nulla.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/localhost:8000\/api\/meals\/\/items\/"}}}'
+        content: '{"data":{"id":null,"title":"Quasi.","description":"Labore minus laborum repellendus voluptatem nihil dolorem asperiores quibusdam expedita laudantium quos qui id.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}}}'
         headers: []
         description: null
     responseFields:
@@ -264,7 +264,7 @@ endpoints:
         name: id
         description: 'The ID of the meal.'
         required: true
-        example: 12
+        example: 19
         type: integer
     queryParameters: []
     bodyParameters:
@@ -272,18 +272,18 @@ endpoints:
         name: title
         description: 'The new title of the meal'
         required: true
-        example: enim
+        example: sit
         type: string
       description:
         name: description
         description: 'The new description of the meal'
         required: false
-        example: praesentium
+        example: adipisci
         type: string
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"title":"Assumenda.","description":"Esse quia omnis dicta laborum mollitia aliquid qui magnam cumque.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/localhost:8000\/api\/meals\/\/items\/"}}}'
+        content: '{"data":{"id":null,"title":"Maiores.","description":"Dolor neque nihil iure occaecati dolor ipsam hic aperiam accusantium labore quos iusto.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}}}'
         headers: []
         description: null
     responseFields:
@@ -336,14 +336,14 @@ endpoints:
         name: id
         description: 'The ID of the meal.'
         required: true
-        example: 15
+        example: 10
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"title":"Eum quis.","description":"In earum accusamus neque sed necessitatibus ipsam cum.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/localhost:8000\/api\/meals\/\/items\/"}}}'
+        content: '{"data":{"id":null,"title":"Quis eos.","description":"Ullam qui maxime earum excepturi dolores pariatur minima labore optio expedita dolores eligendi et.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}}}'
         headers: []
         description: null
     responseFields:

@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://localhost:8000'
+    url: 'http://edenallergies.herokuapp.com'
 paths:
   '/api/{fallbackPlaceholder}':
     get:
@@ -27,13 +27,18 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        404:
           description: ''
           content:
-            text/plain:
+            application/json:
               schema:
-                type: string
-                example: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Eden Allergies</title>\n\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css\" integrity=\"sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"\n        />\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css\" integrity=\"sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"\n        />\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css\" integrity=\"sha512-Nqct4Jg8iYwFRs/C34hjAF5og5HONE2mrrUV1JZUswB+YU7vYSPyIjGMq+EAQYDmOsMuO9VIhKpRUa7GjRKVlg==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />\n\n        <!-- Fonts -->\n        <link href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\" rel=\"stylesheet\">\n\n        <link rel=\"stylesheet\" href=\"/assets/css/app.css\">\n\n        <style>\n            body {\n                font-family: 'Nunito', sans-serif;\n            }\n        </style>\n    </head>\n    <body class=\"antialiased\">\n        <div id=\"app\">\n            <router-view v-slot=\"{Component}\">\n                <transition name=\"route\" mode=\"out-in\">\n                    <component :is=\"Component\"></component>\n                </transition>\n            </router-view>\n        </div>\n\n        <script src=\"/assets/js/app.js\"></script>\n    </body>\n</html>\n"
+                type: object
+                example:
+                  message: 'Page Not Found. If error persists, contact info@edenallergies.herokuapp.com'
+                properties:
+                  message:
+                    type: string
+                    example: 'Page Not Found. If error persists, contact info@edenallergies.herokuapp.com'
       tags:
         - ''
       security: []
@@ -42,7 +47,7 @@ paths:
         in: path
         name: fallbackPlaceholder
         description: ''
-        example: ''
+        example: gTq
         required: true
         schema:
           type: string
@@ -55,12 +60,12 @@ paths:
           in: query
           name: page
           description: 'Page number to show.'
-          example: 18
+          example: 7
           required: false
           schema:
             type: integer
             description: 'Page number to show.'
-            example: 18
+            example: 7
         -
           in: header
           name: Content-Type
@@ -92,7 +97,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                     -
                       id: null
                       title: null
@@ -101,7 +106,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                   links:
                     first: '/?page=1'
                     last: '/?page=1'
@@ -140,7 +145,7 @@ paths:
                         updated_at: null
                         deleted_at: null
                         links:
-                          meals: 'http://localhost:8000/api/allergies//meals/'
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                       -
                         id: null
                         title: null
@@ -149,7 +154,7 @@ paths:
                         updated_at: null
                         deleted_at: null
                         links:
-                          meals: 'http://localhost:8000/api/allergies//meals/'
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                     items:
                       type: object
                   links:
@@ -226,7 +231,7 @@ paths:
                     updated_at: null
                     deleted_at: null
                     links:
-                      meals: 'http://localhost:8000/api/allergies//meals/'
+                      meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                 properties:
                   data:
                     type: object
@@ -238,7 +243,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
       tags:
         - 'Allergy Endpoints'
       requestBody:
@@ -251,11 +256,11 @@ paths:
                 title:
                   type: string
                   description: 'The title of the allergy'
-                  example: debitis
+                  example: non
                 description:
                   type: string
                   description: 'The description of the allergy'
-                  example: deserunt
+                  example: eos
               required:
                 - title
   '/api/allergies/{id}':
@@ -293,7 +298,7 @@ paths:
                     updated_at: null
                     deleted_at: null
                     links:
-                      meals: 'http://localhost:8000/api/allergies//meals/'
+                      meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                 properties:
                   data:
                     type: object
@@ -305,7 +310,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
       tags:
         - 'Allergy Endpoints'
       security: []
@@ -350,7 +355,7 @@ paths:
                     updated_at: null
                     deleted_at: null
                     links:
-                      meals: 'http://localhost:8000/api/allergies//meals/'
+                      meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                 properties:
                   data:
                     type: object
@@ -362,7 +367,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
       tags:
         - 'Allergy Endpoints'
       requestBody:
@@ -375,11 +380,11 @@ paths:
                 title:
                   type: string
                   description: 'The new title of the allergy'
-                  example: qui
+                  example: nisi
                 description:
                   type: string
                   description: 'The new description of the allergy'
-                  example: velit
+                  example: cumque
               required:
                 - title
     delete:
@@ -423,7 +428,7 @@ paths:
                     updated_at: null
                     deleted_at: null
                     links:
-                      meals: 'http://localhost:8000/api/allergies//meals/'
+                      meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                 properties:
                   data:
                     type: object
@@ -435,7 +440,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
       tags:
         - 'Allergy Endpoints'
     parameters:
@@ -443,7 +448,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the allergy.'
-        example: 18
+        example: 6
         required: true
         schema:
           type: integer
@@ -477,24 +482,24 @@ paths:
                   data:
                     -
                       id: null
-                      title: 'Aut ea.'
-                      description: 'Quisquam esse eius et fugit ex excepturi.'
+                      title: Sunt.
+                      description: 'Error quae placeat fuga omnis rerum accusantium perspiciatis illo.'
                       allergy: null
                       created_at: null
                       updated_at: null
                       deleted_at: null
                       links:
-                        items: 'http://localhost:8000/api/meals//items/'
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                     -
                       id: null
-                      title: Nihil.
-                      description: 'Aperiam ullam voluptatem qui enim aliquam nostrum quibusdam aliquam sit tenetur.'
+                      title: Sit.
+                      description: 'Odio quidem eos cum et voluptatem qui amet.'
                       allergy: null
                       created_at: null
                       updated_at: null
                       deleted_at: null
                       links:
-                        items: 'http://localhost:8000/api/meals//items/'
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                   links:
                     first: '/?page=1'
                     last: '/?page=1'
@@ -527,24 +532,24 @@ paths:
                     example:
                       -
                         id: null
-                        title: 'Aut ea.'
-                        description: 'Quisquam esse eius et fugit ex excepturi.'
+                        title: Sunt.
+                        description: 'Error quae placeat fuga omnis rerum accusantium perspiciatis illo.'
                         allergy: null
                         created_at: null
                         updated_at: null
                         deleted_at: null
                         links:
-                          items: 'http://localhost:8000/api/meals//items/'
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                       -
                         id: null
-                        title: Nihil.
-                        description: 'Aperiam ullam voluptatem qui enim aliquam nostrum quibusdam aliquam sit tenetur.'
+                        title: Sit.
+                        description: 'Odio quidem eos cum et voluptatem qui amet.'
                         allergy: null
                         created_at: null
                         updated_at: null
                         deleted_at: null
                         links:
-                          items: 'http://localhost:8000/api/meals//items/'
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                     items:
                       type: object
                   links:
@@ -621,19 +626,19 @@ paths:
                 name:
                   type: string
                   description: 'Name of the new account'
-                  example: quia
+                  example: aut
                 email:
                   type: string
                   description: 'Email Address of the new account'
-                  example: placeat
+                  example: ducimus
                 password:
                   type: string
                   description: 'Password of the new account'
-                  example: dolores
+                  example: suscipit
                 password_confirmation:
                   type: string
                   description: 'Password Confirmation'
-                  example: itaque
+                  example: praesentium
               required:
                 - name
                 - email
@@ -672,11 +677,11 @@ paths:
                 email:
                   type: string
                   description: 'Email Address of registered account'
-                  example: voluptatem
+                  example: ea
                 password:
                   type: string
                   description: 'Password of registered account'
-                  example: qui
+                  example: sed
               required:
                 - email
                 - password
@@ -739,20 +744,20 @@ paths:
                 example:
                   data:
                     -
-                      id: 288
-                      title: Quidem.
-                      description: 'Ab est deserunt minima.'
+                      id: 297
+                      title: Nihil.
+                      description: 'Provident perspiciatis tempora veniam.'
                       category: ''
-                      created_at: '2021-08-08T12:52:06.000000Z'
-                      updated_at: '2021-08-08T12:52:06.000000Z'
+                      created_at: '2021-08-08T21:50:15.000000Z'
+                      updated_at: '2021-08-08T21:50:15.000000Z'
                       deleted_at: null
                     -
-                      id: 289
-                      title: Nemo.
-                      description: 'Eos explicabo debitis.'
+                      id: 298
+                      title: Et.
+                      description: 'Et temporibus similique nemo rem.'
                       category: ''
-                      created_at: '2021-08-08T12:52:06.000000Z'
-                      updated_at: '2021-08-08T12:52:06.000000Z'
+                      created_at: '2021-08-08T21:50:15.000000Z'
+                      updated_at: '2021-08-08T21:50:15.000000Z'
                       deleted_at: null
                   links:
                     first: '/?page=1'
@@ -785,20 +790,20 @@ paths:
                     type: array
                     example:
                       -
-                        id: 288
-                        title: Quidem.
-                        description: 'Ab est deserunt minima.'
+                        id: 297
+                        title: Nihil.
+                        description: 'Provident perspiciatis tempora veniam.'
                         category: ''
-                        created_at: '2021-08-08T12:52:06.000000Z'
-                        updated_at: '2021-08-08T12:52:06.000000Z'
+                        created_at: '2021-08-08T21:50:15.000000Z'
+                        updated_at: '2021-08-08T21:50:15.000000Z'
                         deleted_at: null
                       -
-                        id: 289
-                        title: Nemo.
-                        description: 'Eos explicabo debitis.'
+                        id: 298
+                        title: Et.
+                        description: 'Et temporibus similique nemo rem.'
                         category: ''
-                        created_at: '2021-08-08T12:52:06.000000Z'
-                        updated_at: '2021-08-08T12:52:06.000000Z'
+                        created_at: '2021-08-08T21:50:15.000000Z'
+                        updated_at: '2021-08-08T21:50:15.000000Z'
                         deleted_at: null
                     items:
                       type: object
@@ -869,23 +874,23 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 293
-                    title: Quidem.
-                    description: 'Sed natus atque quidem sunt.'
+                    id: 302
+                    title: Fugit.
+                    description: 'Facere vel officia.'
                     category: ''
-                    created_at: '2021-08-08T12:52:06.000000Z'
-                    updated_at: '2021-08-08T12:52:06.000000Z'
+                    created_at: '2021-08-08T21:50:17.000000Z'
+                    updated_at: '2021-08-08T21:50:17.000000Z'
                     deleted_at: null
                 properties:
                   data:
                     type: object
                     example:
-                      id: 293
-                      title: Quidem.
-                      description: 'Sed natus atque quidem sunt.'
+                      id: 302
+                      title: Fugit.
+                      description: 'Facere vel officia.'
                       category: ''
-                      created_at: '2021-08-08T12:52:06.000000Z'
-                      updated_at: '2021-08-08T12:52:06.000000Z'
+                      created_at: '2021-08-08T21:50:17.000000Z'
+                      updated_at: '2021-08-08T21:50:17.000000Z'
                       deleted_at: null
       tags:
         - 'Item Endpoints'
@@ -899,11 +904,11 @@ paths:
                 title:
                   type: string
                   description: 'The title of the meal'
-                  example: est
+                  example: sint
                 description:
                   type: string
                   description: 'The description of the meal'
-                  example: quas
+                  example: ducimus
               required:
                 - title
   '/api/items/{id}':
@@ -934,23 +939,23 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 290
-                    title: 'Sed et.'
-                    description: 'Iure impedit quibusdam.'
+                    id: 299
+                    title: Eum.
+                    description: 'Voluptas labore recusandae ut.'
                     category: ''
-                    created_at: '2021-08-08T12:52:06.000000Z'
-                    updated_at: '2021-08-08T12:52:06.000000Z'
+                    created_at: '2021-08-08T21:50:15.000000Z'
+                    updated_at: '2021-08-08T21:50:15.000000Z'
                     deleted_at: null
                 properties:
                   data:
                     type: object
                     example:
-                      id: 290
-                      title: 'Sed et.'
-                      description: 'Iure impedit quibusdam.'
+                      id: 299
+                      title: Eum.
+                      description: 'Voluptas labore recusandae ut.'
                       category: ''
-                      created_at: '2021-08-08T12:52:06.000000Z'
-                      updated_at: '2021-08-08T12:52:06.000000Z'
+                      created_at: '2021-08-08T21:50:15.000000Z'
+                      updated_at: '2021-08-08T21:50:15.000000Z'
                       deleted_at: null
       tags:
         - 'Item Endpoints'
@@ -989,23 +994,23 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 294
-                    title: Iure.
-                    description: 'Sed soluta aut pariatur sunt non.'
+                    id: 303
+                    title: Fugit.
+                    description: 'Iusto laborum perferendis aut vel error.'
                     category: ''
-                    created_at: '2021-08-08T12:52:07.000000Z'
-                    updated_at: '2021-08-08T12:52:07.000000Z'
+                    created_at: '2021-08-08T21:50:17.000000Z'
+                    updated_at: '2021-08-08T21:50:17.000000Z'
                     deleted_at: null
                 properties:
                   data:
                     type: object
                     example:
-                      id: 294
-                      title: Iure.
-                      description: 'Sed soluta aut pariatur sunt non.'
+                      id: 303
+                      title: Fugit.
+                      description: 'Iusto laborum perferendis aut vel error.'
                       category: ''
-                      created_at: '2021-08-08T12:52:07.000000Z'
-                      updated_at: '2021-08-08T12:52:07.000000Z'
+                      created_at: '2021-08-08T21:50:17.000000Z'
+                      updated_at: '2021-08-08T21:50:17.000000Z'
                       deleted_at: null
       tags:
         - 'Item Endpoints'
@@ -1019,11 +1024,11 @@ paths:
                 title:
                   type: string
                   description: 'The new title of the meal'
-                  example: pariatur
+                  example: suscipit
                 description:
                   type: string
                   description: 'The new description of the meal'
-                  example: qui
+                  example: corrupti
               required:
                 - title
     delete:
@@ -1060,23 +1065,23 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 295
-                    title: Sit.
-                    description: 'Numquam officia eius error dolorem dolorum.'
+                    id: 304
+                    title: Sunt.
+                    description: 'Libero eos aspernatur natus sapiente.'
                     category: ''
-                    created_at: '2021-08-08T12:52:07.000000Z'
-                    updated_at: '2021-08-08T12:52:07.000000Z'
+                    created_at: '2021-08-08T21:50:17.000000Z'
+                    updated_at: '2021-08-08T21:50:17.000000Z'
                     deleted_at: null
                 properties:
                   data:
                     type: object
                     example:
-                      id: 295
-                      title: Sit.
-                      description: 'Numquam officia eius error dolorem dolorum.'
+                      id: 304
+                      title: Sunt.
+                      description: 'Libero eos aspernatur natus sapiente.'
                       category: ''
-                      created_at: '2021-08-08T12:52:07.000000Z'
-                      updated_at: '2021-08-08T12:52:07.000000Z'
+                      created_at: '2021-08-08T21:50:17.000000Z'
+                      updated_at: '2021-08-08T21:50:17.000000Z'
                       deleted_at: null
       tags:
         - 'Item Endpoints'
@@ -1085,7 +1090,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the item.'
-        example: 12
+        example: 6
         required: true
         schema:
           type: integer
@@ -1098,12 +1103,12 @@ paths:
           in: query
           name: page
           description: 'Page number to show.'
-          example: 15
+          example: 11
           required: false
           schema:
             type: integer
             description: 'Page number to show.'
-            example: 15
+            example: 11
         -
           in: header
           name: Content-Type
@@ -1129,24 +1134,24 @@ paths:
                   data:
                     -
                       id: null
-                      title: 'Aut sunt.'
-                      description: 'Qui quas corporis aut voluptatem et quas aut debitis.'
+                      title: Assumenda.
+                      description: 'Ea blanditiis dolorem ut voluptates facilis doloribus nihil impedit veritatis consequatur natus non.'
                       allergy: null
                       created_at: null
                       updated_at: null
                       deleted_at: null
                       links:
-                        items: 'http://localhost:8000/api/meals//items/'
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                     -
                       id: null
-                      title: Dolores.
-                      description: 'Accusantium dolor sed voluptatum et et qui nobis earum quia praesentium.'
+                      title: Qui.
+                      description: 'In aspernatur et qui voluptates officia accusamus debitis sed voluptate aut.'
                       allergy: null
                       created_at: null
                       updated_at: null
                       deleted_at: null
                       links:
-                        items: 'http://localhost:8000/api/meals//items/'
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                   links:
                     first: '/?page=1'
                     last: '/?page=1'
@@ -1179,24 +1184,24 @@ paths:
                     example:
                       -
                         id: null
-                        title: 'Aut sunt.'
-                        description: 'Qui quas corporis aut voluptatem et quas aut debitis.'
+                        title: Assumenda.
+                        description: 'Ea blanditiis dolorem ut voluptates facilis doloribus nihil impedit veritatis consequatur natus non.'
                         allergy: null
                         created_at: null
                         updated_at: null
                         deleted_at: null
                         links:
-                          items: 'http://localhost:8000/api/meals//items/'
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                       -
                         id: null
-                        title: Dolores.
-                        description: 'Accusantium dolor sed voluptatum et et qui nobis earum quia praesentium.'
+                        title: Qui.
+                        description: 'In aspernatur et qui voluptates officia accusamus debitis sed voluptate aut.'
                         allergy: null
                         created_at: null
                         updated_at: null
                         deleted_at: null
                         links:
-                          items: 'http://localhost:8000/api/meals//items/'
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                     items:
                       type: object
                   links:
@@ -1267,27 +1272,27 @@ paths:
                 example:
                   data:
                     id: null
-                    title: Omnis.
-                    description: 'Vitae provident facilis in assumenda saepe rerum et nulla.'
+                    title: Quasi.
+                    description: 'Labore minus laborum repellendus voluptatem nihil dolorem asperiores quibusdam expedita laudantium quos qui id.'
                     allergy: null
                     created_at: null
                     updated_at: null
                     deleted_at: null
                     links:
-                      items: 'http://localhost:8000/api/meals//items/'
+                      items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                 properties:
                   data:
                     type: object
                     example:
                       id: null
-                      title: Omnis.
-                      description: 'Vitae provident facilis in assumenda saepe rerum et nulla.'
+                      title: Quasi.
+                      description: 'Labore minus laborum repellendus voluptatem nihil dolorem asperiores quibusdam expedita laudantium quos qui id.'
                       allergy: null
                       created_at: null
                       updated_at: null
                       deleted_at: null
                       links:
-                        items: 'http://localhost:8000/api/meals//items/'
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
       tags:
         - 'Meal Endpoints'
       requestBody:
@@ -1300,15 +1305,15 @@ paths:
                 allergy:
                   type: string
                   description: ''
-                  example: ea
+                  example: iusto
                 title:
                   type: string
                   description: 'The new title of the meal'
-                  example: sed
+                  example: nulla
                 description:
                   type: string
                   description: 'The new description of the meal'
-                  example: quia
+                  example: ab
               required:
                 - allergy
                 - title
@@ -1341,27 +1346,27 @@ paths:
                 example:
                   data:
                     id: null
-                    title: Itaque.
-                    description: 'Quasi ut sint impedit aliquid magni minima et.'
+                    title: 'Qui in.'
+                    description: 'Et inventore quidem minus maiores aut officia labore voluptas ea nostrum minus excepturi.'
                     allergy: null
                     created_at: null
                     updated_at: null
                     deleted_at: null
                     links:
-                      items: 'http://localhost:8000/api/meals//items/'
+                      items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                 properties:
                   data:
                     type: object
                     example:
                       id: null
-                      title: Itaque.
-                      description: 'Quasi ut sint impedit aliquid magni minima et.'
+                      title: 'Qui in.'
+                      description: 'Et inventore quidem minus maiores aut officia labore voluptas ea nostrum minus excepturi.'
                       allergy: null
                       created_at: null
                       updated_at: null
                       deleted_at: null
                       links:
-                        items: 'http://localhost:8000/api/meals//items/'
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
       tags:
         - 'Meal Endpoints'
       security: []
@@ -1400,27 +1405,27 @@ paths:
                 example:
                   data:
                     id: null
-                    title: Assumenda.
-                    description: 'Esse quia omnis dicta laborum mollitia aliquid qui magnam cumque.'
+                    title: Maiores.
+                    description: 'Dolor neque nihil iure occaecati dolor ipsam hic aperiam accusantium labore quos iusto.'
                     allergy: null
                     created_at: null
                     updated_at: null
                     deleted_at: null
                     links:
-                      items: 'http://localhost:8000/api/meals//items/'
+                      items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                 properties:
                   data:
                     type: object
                     example:
                       id: null
-                      title: Assumenda.
-                      description: 'Esse quia omnis dicta laborum mollitia aliquid qui magnam cumque.'
+                      title: Maiores.
+                      description: 'Dolor neque nihil iure occaecati dolor ipsam hic aperiam accusantium labore quos iusto.'
                       allergy: null
                       created_at: null
                       updated_at: null
                       deleted_at: null
                       links:
-                        items: 'http://localhost:8000/api/meals//items/'
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
       tags:
         - 'Meal Endpoints'
       requestBody:
@@ -1433,11 +1438,11 @@ paths:
                 title:
                   type: string
                   description: 'The new title of the meal'
-                  example: enim
+                  example: sit
                 description:
                   type: string
                   description: 'The new description of the meal'
-                  example: praesentium
+                  example: adipisci
               required:
                 - title
     delete:
@@ -1475,27 +1480,27 @@ paths:
                 example:
                   data:
                     id: null
-                    title: 'Eum quis.'
-                    description: 'In earum accusamus neque sed necessitatibus ipsam cum.'
+                    title: 'Quis eos.'
+                    description: 'Ullam qui maxime earum excepturi dolores pariatur minima labore optio expedita dolores eligendi et.'
                     allergy: null
                     created_at: null
                     updated_at: null
                     deleted_at: null
                     links:
-                      items: 'http://localhost:8000/api/meals//items/'
+                      items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                 properties:
                   data:
                     type: object
                     example:
                       id: null
-                      title: 'Eum quis.'
-                      description: 'In earum accusamus neque sed necessitatibus ipsam cum.'
+                      title: 'Quis eos.'
+                      description: 'Ullam qui maxime earum excepturi dolores pariatur minima labore optio expedita dolores eligendi et.'
                       allergy: null
                       created_at: null
                       updated_at: null
                       deleted_at: null
                       links:
-                        items: 'http://localhost:8000/api/meals//items/'
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
       tags:
         - 'Meal Endpoints'
     parameters:
@@ -1536,20 +1541,20 @@ paths:
                 example:
                   data:
                     -
-                      id: 291
-                      title: 'Aut ut.'
-                      description: 'Ea saepe vel.'
+                      id: 300
+                      title: Nihil.
+                      description: 'Sapiente sit esse voluptas ipsum minima.'
                       category: ''
-                      created_at: '2021-08-08T12:52:06.000000Z'
-                      updated_at: '2021-08-08T12:52:06.000000Z'
+                      created_at: '2021-08-08T21:50:16.000000Z'
+                      updated_at: '2021-08-08T21:50:16.000000Z'
                       deleted_at: null
                     -
-                      id: 292
-                      title: Qui.
-                      description: 'Eum voluptas dolorem iste eum aut.'
+                      id: 301
+                      title: Ab.
+                      description: 'Vero libero eligendi.'
                       category: ''
-                      created_at: '2021-08-08T12:52:06.000000Z'
-                      updated_at: '2021-08-08T12:52:06.000000Z'
+                      created_at: '2021-08-08T21:50:16.000000Z'
+                      updated_at: '2021-08-08T21:50:16.000000Z'
                       deleted_at: null
                   links:
                     first: '/?page=1'
@@ -1582,20 +1587,20 @@ paths:
                     type: array
                     example:
                       -
-                        id: 291
-                        title: 'Aut ut.'
-                        description: 'Ea saepe vel.'
+                        id: 300
+                        title: Nihil.
+                        description: 'Sapiente sit esse voluptas ipsum minima.'
                         category: ''
-                        created_at: '2021-08-08T12:52:06.000000Z'
-                        updated_at: '2021-08-08T12:52:06.000000Z'
+                        created_at: '2021-08-08T21:50:16.000000Z'
+                        updated_at: '2021-08-08T21:50:16.000000Z'
                         deleted_at: null
                       -
-                        id: 292
-                        title: Qui.
-                        description: 'Eum voluptas dolorem iste eum aut.'
+                        id: 301
+                        title: Ab.
+                        description: 'Vero libero eligendi.'
                         category: ''
-                        created_at: '2021-08-08T12:52:06.000000Z'
-                        updated_at: '2021-08-08T12:52:06.000000Z'
+                        created_at: '2021-08-08T21:50:16.000000Z'
+                        updated_at: '2021-08-08T21:50:16.000000Z'
                         deleted_at: null
                     items:
                       type: object
@@ -1637,7 +1642,7 @@ paths:
         in: path
         name: meal
         description: ''
-        example: 3
+        example: 16
         required: true
         schema:
           type: integer
@@ -1684,7 +1689,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                     -
                       id: null
                       title: null
@@ -1693,7 +1698,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                 properties:
                   data:
                     type: array
@@ -1706,7 +1711,7 @@ paths:
                         updated_at: null
                         deleted_at: null
                         links:
-                          meals: 'http://localhost:8000/api/allergies//meals/'
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                       -
                         id: null
                         title: null
@@ -1715,7 +1720,7 @@ paths:
                         updated_at: null
                         deleted_at: null
                         links:
-                          meals: 'http://localhost:8000/api/allergies//meals/'
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                     items:
                       type: object
       tags:
@@ -1763,7 +1768,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                     -
                       id: null
                       title: null
@@ -1772,7 +1777,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                 properties:
                   data:
                     type: array
@@ -1785,7 +1790,7 @@ paths:
                         updated_at: null
                         deleted_at: null
                         links:
-                          meals: 'http://localhost:8000/api/allergies//meals/'
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                       -
                         id: null
                         title: null
@@ -1794,7 +1799,7 @@ paths:
                         updated_at: null
                         deleted_at: null
                         links:
-                          meals: 'http://localhost:8000/api/allergies//meals/'
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                     items:
                       type: object
       tags:
@@ -1859,7 +1864,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                     -
                       id: null
                       title: null
@@ -1868,7 +1873,7 @@ paths:
                       updated_at: null
                       deleted_at: null
                       links:
-                        meals: 'http://localhost:8000/api/allergies//meals/'
+                        meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                 properties:
                   data:
                     type: array
@@ -1881,7 +1886,7 @@ paths:
                         updated_at: null
                         deleted_at: null
                         links:
-                          meals: 'http://localhost:8000/api/allergies//meals/'
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                       -
                         id: null
                         title: null
@@ -1890,7 +1895,7 @@ paths:
                         updated_at: null
                         deleted_at: null
                         links:
-                          meals: 'http://localhost:8000/api/allergies//meals/'
+                          meals: 'http://edenallergies.herokuapp.com/api/allergies//meals/'
                     items:
                       type: object
       tags:
@@ -1949,48 +1954,48 @@ paths:
                   data:
                     -
                       id: null
-                      title: Ipsam.
-                      description: 'Qui doloremque possimus in ut animi aperiam facilis magnam atque dolor cumque laudantium rerum.'
+                      title: 'Vel id.'
+                      description: 'Rerum quasi in et delectus voluptatem et velit.'
                       allergy: null
                       created_at: null
                       updated_at: null
                       deleted_at: null
                       links:
-                        items: 'http://localhost:8000/api/meals//items/'
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                     -
                       id: null
-                      title: 'Sed est.'
-                      description: 'Maxime ab modi tempore harum totam facere eaque excepturi et qui aut non.'
+                      title: 'Ut qui.'
+                      description: 'Adipisci consequatur voluptatem assumenda earum voluptatem molestiae et nisi.'
                       allergy: null
                       created_at: null
                       updated_at: null
                       deleted_at: null
                       links:
-                        items: 'http://localhost:8000/api/meals//items/'
+                        items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                 properties:
                   data:
                     type: array
                     example:
                       -
                         id: null
-                        title: Ipsam.
-                        description: 'Qui doloremque possimus in ut animi aperiam facilis magnam atque dolor cumque laudantium rerum.'
+                        title: 'Vel id.'
+                        description: 'Rerum quasi in et delectus voluptatem et velit.'
                         allergy: null
                         created_at: null
                         updated_at: null
                         deleted_at: null
                         links:
-                          items: 'http://localhost:8000/api/meals//items/'
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                       -
                         id: null
-                        title: 'Sed est.'
-                        description: 'Maxime ab modi tempore harum totam facere eaque excepturi et qui aut non.'
+                        title: 'Ut qui.'
+                        description: 'Adipisci consequatur voluptatem assumenda earum voluptatem molestiae et nisi.'
                         allergy: null
                         created_at: null
                         updated_at: null
                         deleted_at: null
                         links:
-                          items: 'http://localhost:8000/api/meals//items/'
+                          items: 'http://edenallergies.herokuapp.com/api/meals//items/'
                     items:
                       type: object
       tags:

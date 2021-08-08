@@ -22,7 +22,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":288,"title":"Quidem.","description":"Ab est deserunt minima.","category":"","created_at":"2021-08-08T12:52:06.000000Z","updated_at":"2021-08-08T12:52:06.000000Z","deleted_at":null},{"id":289,"title":"Nemo.","description":"Eos explicabo debitis.","category":"","created_at":"2021-08-08T12:52:06.000000Z","updated_at":"2021-08-08T12:52:06.000000Z","deleted_at":null}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
+        content: '{"data":[{"id":297,"title":"Nihil.","description":"Provident perspiciatis tempora veniam.","category":"","created_at":"2021-08-08T21:50:15.000000Z","updated_at":"2021-08-08T21:50:15.000000Z","deleted_at":null},{"id":298,"title":"Et.","description":"Et temporibus similique nemo rem.","category":"","created_at":"2021-08-08T21:50:15.000000Z","updated_at":"2021-08-08T21:50:15.000000Z","deleted_at":null}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
         headers: []
         description: null
     responseFields:
@@ -66,14 +66,14 @@ endpoints:
         name: id
         description: 'The ID of the item.'
         required: true
-        example: 12
+        example: 6
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":290,"title":"Sed et.","description":"Iure impedit quibusdam.","category":"","created_at":"2021-08-08T12:52:06.000000Z","updated_at":"2021-08-08T12:52:06.000000Z","deleted_at":null}}'
+        content: '{"data":{"id":299,"title":"Eum.","description":"Voluptas labore recusandae ut.","category":"","created_at":"2021-08-08T21:50:15.000000Z","updated_at":"2021-08-08T21:50:15.000000Z","deleted_at":null}}'
         headers: []
         description: null
     responseFields:
@@ -120,18 +120,18 @@ endpoints:
         name: title
         description: 'The title of the meal'
         required: true
-        example: est
+        example: sint
         type: string
       description:
         name: description
         description: 'The description of the meal'
         required: false
-        example: quas
+        example: ducimus
         type: string
     responses:
       -
         status: 200
-        content: '{"data":{"id":293,"title":"Quidem.","description":"Sed natus atque quidem sunt.","category":"","created_at":"2021-08-08T12:52:06.000000Z","updated_at":"2021-08-08T12:52:06.000000Z","deleted_at":null}}'
+        content: '{"data":{"id":302,"title":"Fugit.","description":"Facere vel officia.","category":"","created_at":"2021-08-08T21:50:17.000000Z","updated_at":"2021-08-08T21:50:17.000000Z","deleted_at":null}}'
         headers: []
         description: null
     responseFields:
@@ -177,7 +177,7 @@ endpoints:
         name: id
         description: 'The ID of the item.'
         required: true
-        example: 15
+        example: 19
         type: integer
     queryParameters: []
     bodyParameters:
@@ -185,18 +185,18 @@ endpoints:
         name: title
         description: 'The new title of the meal'
         required: true
-        example: pariatur
+        example: suscipit
         type: string
       description:
         name: description
         description: 'The new description of the meal'
         required: false
-        example: qui
+        example: corrupti
         type: string
     responses:
       -
         status: 200
-        content: '{"data":{"id":294,"title":"Iure.","description":"Sed soluta aut pariatur sunt non.","category":"","created_at":"2021-08-08T12:52:07.000000Z","updated_at":"2021-08-08T12:52:07.000000Z","deleted_at":null}}'
+        content: '{"data":{"id":303,"title":"Fugit.","description":"Iusto laborum perferendis aut vel error.","category":"","created_at":"2021-08-08T21:50:17.000000Z","updated_at":"2021-08-08T21:50:17.000000Z","deleted_at":null}}'
         headers: []
         description: null
     responseFields:
@@ -249,14 +249,14 @@ endpoints:
         name: id
         description: 'The ID of the item.'
         required: true
-        example: 9
+        example: 20
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":295,"title":"Sit.","description":"Numquam officia eius error dolorem dolorum.","category":"","created_at":"2021-08-08T12:52:07.000000Z","updated_at":"2021-08-08T12:52:07.000000Z","deleted_at":null}}'
+        content: '{"data":{"id":304,"title":"Sunt.","description":"Libero eos aspernatur natus sapiente.","category":"","created_at":"2021-08-08T21:50:17.000000Z","updated_at":"2021-08-08T21:50:17.000000Z","deleted_at":null}}'
         headers: []
         description: null
     responseFields:

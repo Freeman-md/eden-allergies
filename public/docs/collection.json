@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "localhost"
+            "value": "edenallergies.herokuapp.com"
         }
     ],
     "info": {
         "name": "Eden Allergies API Documentation",
-        "_postman_id": "a0f64160-593c-415b-916b-7684ec601db5",
+        "_postman_id": "bbff3a31-3ae8-4416-b227-146bae6507a3",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -32,7 +32,7 @@
                                 {
                                     "id": "fallbackPlaceholder",
                                     "key": "fallbackPlaceholder",
-                                    "value": "",
+                                    "value": "gTq",
                                     "description": ""
                                 }
                             ]
@@ -58,20 +58,28 @@
                         {
                             "header": [
                                 {
-                                    "key": "content-type",
-                                    "value": "text\/html; charset=UTF-8"
-                                },
-                                {
                                     "key": "cache-control",
                                     "value": "no-cache, private"
                                 },
                                 {
-                                    "key": "set-cookie",
-                                    "value": "XSRF-TOKEN=eyJpdiI6Ik5OTWMxOFV5RDhjOGppM1hZeHJ4WEE9PSIsInZhbHVlIjoiQmxJWklhRFYvcGIzUDFFRGYyYW5zVjVBSG4rR3NEenFqOGlSMXR2Vkp0RHlTaUFyNWdFVm81cDh0SjkvZUJmZERneGxWaXZERFpGTExTK2hHejdhdnpaNjI5bFk2ZkpvTHN6NVBpMjhicTU5aW00UTFTUUhlblNzUFhzSzJOakgiLCJtYWMiOiI3N2Q5ZDY5ZjUzYzA1ZWMwNmI3MDRhNGY4YTY1NGExNDIyYmVkNmQ4MTUwNDg5YjMyNzAzNzI4ZmNiNjY0NWRkIn0%3D; expires=Sun, 08-Aug-2021 14:52:07 GMT; Max-Age=7200; path=\/; samesite=lax; eden_allergies_session=eyJpdiI6IjVwcnNOT1dlejhWeTlxNzYxNGxmRGc9PSIsInZhbHVlIjoiMExDM2w3QUFrd1ppT3JUbkFzbU9ndGJPYmFFclpncHlIR0MwaDgyR1ZLWndEcG5pNStnNUw3aTdqTHZRRGJGNVhHREFnckVLcHA1MU9tV3NtYzlFSWhyYzdyc2FhUms3U1luN1RCZ2dHRFFIYWVjTXZKUWJ6bnVGSjlHYnV5SEsiLCJtYWMiOiI2ZDY5ZWI3MWRiZDhhZWJhOTFjZWZmOTUzYjQ5MTM3ZWI4ZTEwOGIwZGI4M2VhZTI5YjE2Zjg4ZDQ3M2ZmOWRmIn0%3D; expires=Sun, 08-Aug-2021 14:52:07 GMT; Max-Age=7200; path=\/; httponly; samesite=lax"
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
                                 }
                             ],
-                            "code": 200,
-                            "body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n        <title>Eden Allergies<\/title>\n\n        <link rel=\"stylesheet\" href=\"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/5.15.3\/css\/brands.min.css\" integrity=\"sha512-apX8rFN\/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E\/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"\n        \/>\n        <link rel=\"stylesheet\" href=\"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/5.15.3\/css\/all.min.css\" integrity=\"sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM\/gI1w==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"\n        \/>\n        <link rel=\"stylesheet\" href=\"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/5.15.3\/css\/regular.min.css\" integrity=\"sha512-Nqct4Jg8iYwFRs\/C34hjAF5og5HONE2mrrUV1JZUswB+YU7vYSPyIjGMq+EAQYDmOsMuO9VIhKpRUa7GjRKVlg==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" \/>\n\n        <!-- Fonts -->\n        <link href=\"https:\/\/fonts.googleapis.com\/css2?family=Nunito:wght@400;600;700&display=swap\" rel=\"stylesheet\">\n\n        <link rel=\"stylesheet\" href=\"\/assets\/css\/app.css\">\n\n        <style>\n            body {\n                font-family: 'Nunito', sans-serif;\n            }\n        <\/style>\n    <\/head>\n    <body class=\"antialiased\">\n        <div id=\"app\">\n            <router-view v-slot=\"{Component}\">\n                <transition name=\"route\" mode=\"out-in\">\n                    <component :is=\"Component\"><\/component>\n                <\/transition>\n            <\/router-view>\n        <\/div>\n\n        <script src=\"\/assets\/js\/app.js\"><\/script>\n    <\/body>\n<\/html>\n",
+                            "code": 404,
+                            "body": "{\"message\":\"Page Not Found. If error persists, contact info@edenallergies.herokuapp.com\"}",
                             "name": null
                         }
                     ]
@@ -92,12 +100,12 @@
                             "query": [
                                 {
                                     "key": "page",
-                                    "value": "18",
+                                    "value": "7",
                                     "description": "Page number to show.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/allergies?page=18"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/allergies?page=7"
                         },
                         "method": "GET",
                         "header": [
@@ -120,7 +128,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
                             "name": null
                         }
                     ]
@@ -138,7 +146,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "18",
+                                    "value": "6",
                                     "description": "The ID of the allergy."
                                 }
                             ]
@@ -164,7 +172,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
+                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
                             "name": null
                         }
                     ]
@@ -208,7 +216,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"title\":\"Aut ea.\",\"description\":\"Quisquam esse eius et fugit ex excepturi.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/localhost:8000\\\/api\\\/meals\\\/\\\/items\\\/\"}},{\"id\":null,\"title\":\"Nihil.\",\"description\":\"Aperiam ullam voluptatem qui enim aliquam nostrum quibusdam aliquam sit tenetur.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/localhost:8000\\\/api\\\/meals\\\/\\\/items\\\/\"}}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":null,\"title\":\"Sunt.\",\"description\":\"Error quae placeat fuga omnis rerum accusantium perspiciatis illo.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}},{\"id\":null,\"title\":\"Sit.\",\"description\":\"Odio quidem eos cum et voluptatem qui amet.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
                             "name": null
                         }
                     ]
@@ -236,7 +244,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"debitis\",\"description\":\"deserunt\"}"
+                            "raw": "{\"title\":\"non\",\"description\":\"eos\"}"
                         },
                         "description": "Store a newly created allergy in storage."
                     },
@@ -244,7 +252,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
+                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
                             "name": null
                         }
                     ]
@@ -262,7 +270,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "3",
+                                    "value": "1",
                                     "description": "The ID of the allergy."
                                 }
                             ]
@@ -280,7 +288,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"qui\",\"description\":\"velit\"}"
+                            "raw": "{\"title\":\"nisi\",\"description\":\"cumque\"}"
                         },
                         "description": "Update the specified allergy in storage."
                     },
@@ -288,7 +296,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
+                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
                             "name": null
                         }
                     ]
@@ -306,7 +314,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "14",
+                                    "value": "5",
                                     "description": "The ID of the allergy."
                                 }
                             ]
@@ -329,7 +337,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
+                            "body": "{\"data\":{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}}",
                             "name": null
                         }
                     ]
@@ -363,7 +371,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quia\",\"email\":\"placeat\",\"password\":\"dolores\",\"password_confirmation\":\"itaque\"}"
+                            "raw": "{\"name\":\"aut\",\"email\":\"ducimus\",\"password\":\"suscipit\",\"password_confirmation\":\"praesentium\"}"
                         },
                         "description": "Create new user account\n\nGet New Authorization Token",
                         "auth": {
@@ -395,7 +403,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"voluptatem\",\"password\":\"qui\"}"
+                            "raw": "{\"email\":\"ea\",\"password\":\"sed\"}"
                         },
                         "description": "Login to registered account\n\nGet New Authorization Token",
                         "auth": {
@@ -467,7 +475,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":288,\"title\":\"Quidem.\",\"description\":\"Ab est deserunt minima.\",\"category\":\"\",\"created_at\":\"2021-08-08T12:52:06.000000Z\",\"updated_at\":\"2021-08-08T12:52:06.000000Z\",\"deleted_at\":null},{\"id\":289,\"title\":\"Nemo.\",\"description\":\"Eos explicabo debitis.\",\"category\":\"\",\"created_at\":\"2021-08-08T12:52:06.000000Z\",\"updated_at\":\"2021-08-08T12:52:06.000000Z\",\"deleted_at\":null}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":297,\"title\":\"Nihil.\",\"description\":\"Provident perspiciatis tempora veniam.\",\"category\":\"\",\"created_at\":\"2021-08-08T21:50:15.000000Z\",\"updated_at\":\"2021-08-08T21:50:15.000000Z\",\"deleted_at\":null},{\"id\":298,\"title\":\"Et.\",\"description\":\"Et temporibus similique nemo rem.\",\"category\":\"\",\"created_at\":\"2021-08-08T21:50:15.000000Z\",\"updated_at\":\"2021-08-08T21:50:15.000000Z\",\"deleted_at\":null}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
                             "name": null
                         }
                     ]
@@ -485,7 +493,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "6",
                                     "description": "The ID of the item."
                                 }
                             ]
@@ -511,7 +519,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":290,\"title\":\"Sed et.\",\"description\":\"Iure impedit quibusdam.\",\"category\":\"\",\"created_at\":\"2021-08-08T12:52:06.000000Z\",\"updated_at\":\"2021-08-08T12:52:06.000000Z\",\"deleted_at\":null}}",
+                            "body": "{\"data\":{\"id\":299,\"title\":\"Eum.\",\"description\":\"Voluptas labore recusandae ut.\",\"category\":\"\",\"created_at\":\"2021-08-08T21:50:15.000000Z\",\"updated_at\":\"2021-08-08T21:50:15.000000Z\",\"deleted_at\":null}}",
                             "name": null
                         }
                     ]
@@ -539,7 +547,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"est\",\"description\":\"quas\"}"
+                            "raw": "{\"title\":\"sint\",\"description\":\"ducimus\"}"
                         },
                         "description": "Store a newly created item in storage."
                     },
@@ -547,7 +555,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":293,\"title\":\"Quidem.\",\"description\":\"Sed natus atque quidem sunt.\",\"category\":\"\",\"created_at\":\"2021-08-08T12:52:06.000000Z\",\"updated_at\":\"2021-08-08T12:52:06.000000Z\",\"deleted_at\":null}}",
+                            "body": "{\"data\":{\"id\":302,\"title\":\"Fugit.\",\"description\":\"Facere vel officia.\",\"category\":\"\",\"created_at\":\"2021-08-08T21:50:17.000000Z\",\"updated_at\":\"2021-08-08T21:50:17.000000Z\",\"deleted_at\":null}}",
                             "name": null
                         }
                     ]
@@ -565,7 +573,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "19",
                                     "description": "The ID of the item."
                                 }
                             ]
@@ -583,7 +591,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"pariatur\",\"description\":\"qui\"}"
+                            "raw": "{\"title\":\"suscipit\",\"description\":\"corrupti\"}"
                         },
                         "description": "Update the specified item in storage."
                     },
@@ -591,7 +599,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":294,\"title\":\"Iure.\",\"description\":\"Sed soluta aut pariatur sunt non.\",\"category\":\"\",\"created_at\":\"2021-08-08T12:52:07.000000Z\",\"updated_at\":\"2021-08-08T12:52:07.000000Z\",\"deleted_at\":null}}",
+                            "body": "{\"data\":{\"id\":303,\"title\":\"Fugit.\",\"description\":\"Iusto laborum perferendis aut vel error.\",\"category\":\"\",\"created_at\":\"2021-08-08T21:50:17.000000Z\",\"updated_at\":\"2021-08-08T21:50:17.000000Z\",\"deleted_at\":null}}",
                             "name": null
                         }
                     ]
@@ -609,7 +617,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "20",
                                     "description": "The ID of the item."
                                 }
                             ]
@@ -632,7 +640,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":295,\"title\":\"Sit.\",\"description\":\"Numquam officia eius error dolorem dolorum.\",\"category\":\"\",\"created_at\":\"2021-08-08T12:52:07.000000Z\",\"updated_at\":\"2021-08-08T12:52:07.000000Z\",\"deleted_at\":null}}",
+                            "body": "{\"data\":{\"id\":304,\"title\":\"Sunt.\",\"description\":\"Libero eos aspernatur natus sapiente.\",\"category\":\"\",\"created_at\":\"2021-08-08T21:50:17.000000Z\",\"updated_at\":\"2021-08-08T21:50:17.000000Z\",\"deleted_at\":null}}",
                             "name": null
                         }
                     ]
@@ -653,12 +661,12 @@
                             "query": [
                                 {
                                     "key": "page",
-                                    "value": "15",
+                                    "value": "11",
                                     "description": "Page number to show.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/meals?page=15"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/meals?page=11"
                         },
                         "method": "GET",
                         "header": [
@@ -681,7 +689,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"title\":\"Aut sunt.\",\"description\":\"Qui quas corporis aut voluptatem et quas aut debitis.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/localhost:8000\\\/api\\\/meals\\\/\\\/items\\\/\"}},{\"id\":null,\"title\":\"Dolores.\",\"description\":\"Accusantium dolor sed voluptatum et et qui nobis earum quia praesentium.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/localhost:8000\\\/api\\\/meals\\\/\\\/items\\\/\"}}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":null,\"title\":\"Assumenda.\",\"description\":\"Ea blanditiis dolorem ut voluptates facilis doloribus nihil impedit veritatis consequatur natus non.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}},{\"id\":null,\"title\":\"Qui.\",\"description\":\"In aspernatur et qui voluptates officia accusamus debitis sed voluptate aut.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
                             "name": null
                         }
                     ]
@@ -725,7 +733,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"title\":\"Itaque.\",\"description\":\"Quasi ut sint impedit aliquid magni minima et.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/localhost:8000\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
+                            "body": "{\"data\":{\"id\":null,\"title\":\"Qui in.\",\"description\":\"Et inventore quidem minus maiores aut officia labore voluptas ea nostrum minus excepturi.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
                             "name": null
                         }
                     ]
@@ -743,7 +751,7 @@
                                 {
                                     "id": "meal",
                                     "key": "meal",
-                                    "value": "3",
+                                    "value": "16",
                                     "description": ""
                                 }
                             ]
@@ -769,7 +777,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":291,\"title\":\"Aut ut.\",\"description\":\"Ea saepe vel.\",\"category\":\"\",\"created_at\":\"2021-08-08T12:52:06.000000Z\",\"updated_at\":\"2021-08-08T12:52:06.000000Z\",\"deleted_at\":null},{\"id\":292,\"title\":\"Qui.\",\"description\":\"Eum voluptas dolorem iste eum aut.\",\"category\":\"\",\"created_at\":\"2021-08-08T12:52:06.000000Z\",\"updated_at\":\"2021-08-08T12:52:06.000000Z\",\"deleted_at\":null}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":[{\"id\":300,\"title\":\"Nihil.\",\"description\":\"Sapiente sit esse voluptas ipsum minima.\",\"category\":\"\",\"created_at\":\"2021-08-08T21:50:16.000000Z\",\"updated_at\":\"2021-08-08T21:50:16.000000Z\",\"deleted_at\":null},{\"id\":301,\"title\":\"Ab.\",\"description\":\"Vero libero eligendi.\",\"category\":\"\",\"created_at\":\"2021-08-08T21:50:16.000000Z\",\"updated_at\":\"2021-08-08T21:50:16.000000Z\",\"deleted_at\":null}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":\"10\",\"to\":2,\"total\":2}}",
                             "name": null
                         }
                     ]
@@ -797,7 +805,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"allergy\":\"ea\",\"title\":\"sed\",\"description\":\"quia\"}"
+                            "raw": "{\"allergy\":\"iusto\",\"title\":\"nulla\",\"description\":\"ab\"}"
                         },
                         "description": "Store a newly created meal in storage."
                     },
@@ -805,7 +813,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"title\":\"Omnis.\",\"description\":\"Vitae provident facilis in assumenda saepe rerum et nulla.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/localhost:8000\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
+                            "body": "{\"data\":{\"id\":null,\"title\":\"Quasi.\",\"description\":\"Labore minus laborum repellendus voluptatem nihil dolorem asperiores quibusdam expedita laudantium quos qui id.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
                             "name": null
                         }
                     ]
@@ -823,7 +831,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "12",
+                                    "value": "19",
                                     "description": "The ID of the meal."
                                 }
                             ]
@@ -841,7 +849,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"enim\",\"description\":\"praesentium\"}"
+                            "raw": "{\"title\":\"sit\",\"description\":\"adipisci\"}"
                         },
                         "description": "Update the specified resource in storage."
                     },
@@ -849,7 +857,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"title\":\"Assumenda.\",\"description\":\"Esse quia omnis dicta laborum mollitia aliquid qui magnam cumque.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/localhost:8000\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
+                            "body": "{\"data\":{\"id\":null,\"title\":\"Maiores.\",\"description\":\"Dolor neque nihil iure occaecati dolor ipsam hic aperiam accusantium labore quos iusto.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
                             "name": null
                         }
                     ]
@@ -867,7 +875,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "10",
                                     "description": "The ID of the meal."
                                 }
                             ]
@@ -890,7 +898,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":null,\"title\":\"Eum quis.\",\"description\":\"In earum accusamus neque sed necessitatibus ipsam cum.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/localhost:8000\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
+                            "body": "{\"data\":{\"id\":null,\"title\":\"Quis eos.\",\"description\":\"Ullam qui maxime earum excepturi dolores pariatur minima labore optio expedita dolores eligendi et.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}}",
                             "name": null
                         }
                     ]
@@ -929,7 +937,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}]}",
+                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}]}",
                             "name": null
                         }
                     ]
@@ -965,7 +973,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}]}",
+                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}]}",
                             "name": null
                         }
                     ]
@@ -1001,7 +1009,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/localhost:8000\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}]}",
+                            "body": "{\"data\":[{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}},{\"id\":null,\"title\":null,\"description\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"meals\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/allergies\\\/\\\/meals\\\/\"}}]}",
                             "name": null
                         }
                     ]
@@ -1034,7 +1042,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":null,\"title\":\"Ipsam.\",\"description\":\"Qui doloremque possimus in ut animi aperiam facilis magnam atque dolor cumque laudantium rerum.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/localhost:8000\\\/api\\\/meals\\\/\\\/items\\\/\"}},{\"id\":null,\"title\":\"Sed est.\",\"description\":\"Maxime ab modi tempore harum totam facere eaque excepturi et qui aut non.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/localhost:8000\\\/api\\\/meals\\\/\\\/items\\\/\"}}]}",
+                            "body": "{\"data\":[{\"id\":null,\"title\":\"Vel id.\",\"description\":\"Rerum quasi in et delectus voluptatem et velit.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}},{\"id\":null,\"title\":\"Ut qui.\",\"description\":\"Adipisci consequatur voluptatem assumenda earum voluptatem molestiae et nisi.\",\"allergy\":null,\"created_at\":null,\"updated_at\":null,\"deleted_at\":null,\"links\":{\"items\":\"http:\\\/\\\/edenallergies.herokuapp.com\\\/api\\\/meals\\\/\\\/items\\\/\"}}]}",
                             "name": null
                         }
                     ]
