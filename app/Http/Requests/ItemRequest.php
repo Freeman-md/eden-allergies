@@ -27,4 +27,8 @@ class ItemRequest extends FormRequest
             'title' => 'required|string|unique:items,title'
         ];
     }
+
+    public function bodyParameters() {
+        return ['title', 'description'];
+    }
 }

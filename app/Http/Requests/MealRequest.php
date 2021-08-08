@@ -28,4 +28,8 @@ class MealRequest extends FormRequest
             'title' => 'required|string|unique:meals,title'
         ];
     }
+
+    public function bodyParameters() {
+        return ['title', 'description'];
+    }
 }

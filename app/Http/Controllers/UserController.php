@@ -53,7 +53,7 @@ class UserController extends Controller
     }
 
     /**
-     * GET  api/users/allergies/add
+     * POST  api/users/allergies/add
      * 
      * Add allergies for authenticated user
      * 
@@ -61,7 +61,7 @@ class UserController extends Controller
      * 
      * @param  \App\Http\Requests\Request  $request
      * 
-     * @bodyParam allergies required array Array of allergy ids to add
+     * @bodyParam allergies integer[] required Array of allergy ids to add. Example: [4,6]
      * 
      * @apiResourceCollection App\Http\Resources\Allergy
      * @apiResourceModel App\Models\Allergy
@@ -95,7 +95,7 @@ class UserController extends Controller
 
     
     /**
-     * GET  api/users/allergies/remove
+     * POST  api/users/allergies/remove
      * 
      * Remove allergies for authenticated user
      * 
@@ -103,7 +103,7 @@ class UserController extends Controller
      * 
      * @param  \App\Http\Requests\Request  $request
      * 
-     * @bodyParam allergies required array Array of allergy ids to remove
+     * @bodyParam allergies integer[] required Array of allergy ids to add. Example: [4,6]
      * 
      * @apiResourceCollection App\Http\Resources\Allergy
      * @apiResourceModel App\Models\Allergy
@@ -139,8 +139,9 @@ class UserController extends Controller
     /**
      * GET api/users/allergies/meals
      * 
-     * Get Meal Recommendations
+     * Get Meal Recommendations For User
      * 
+     * @authenticated
      * 
      * @apiResourceCollection App\Http\Resources\Meal
      * @apiResourceModel App\Models\Meal
@@ -157,15 +158,15 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getMeals() {
-        $collection = Cache::remember(request()->fullUrl(), 20, function() {
+        $collection = Cache::remember(request()->fullUrl(), 1, function() {
             return $this->userAllergies()->map(function($allergy) {
                 return $allergy->meals()->inRandomOrder()->get();
             });
         });
 
-        $meals = $collection->collapse();
+        $meals = $collection->collapse()->shuffle();
 
-        return response()->json(Meal::collection($meals->all()), Response::HTTP_OK);
+        return response()->json(Meal::collection($meals), Response::HTTP_OK);
     }
     
     /**

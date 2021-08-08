@@ -23,7 +23,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}]}'
+        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}}]}'
         headers: []
         description: null
     responseFields:
@@ -60,7 +60,7 @@ endpoints:
       - POST
     uri: api/users/allergies/add
     metadata:
-      title: 'GET  api/users/allergies/add'
+      title: 'POST  api/users/allergies/add'
       description: 'Add allergies for authenticated user'
       authenticated: true
     headers:
@@ -72,14 +72,16 @@ endpoints:
     bodyParameters:
       allergies:
         name: allergies
-        description: 'array Array of allergy ids to add'
-        required: false
-        example: et
-        type: required
+        description: 'Array of allergy ids to add.'
+        required: true
+        example:
+          - 4
+          - 6
+        type: 'integer[]'
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}]}'
+        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}}]}'
         headers: []
         description: null
     responseFields:
@@ -116,7 +118,7 @@ endpoints:
       - POST
     uri: api/users/allergies/remove
     metadata:
-      title: 'GET  api/users/allergies/remove'
+      title: 'POST  api/users/allergies/remove'
       description: 'Remove allergies for authenticated user'
       authenticated: true
     headers:
@@ -128,14 +130,16 @@ endpoints:
     bodyParameters:
       allergies:
         name: allergies
-        description: 'array Array of allergy ids to remove'
-        required: false
-        example: ad
-        type: required
+        description: 'Array of allergy ids to add.'
+        required: true
+        example:
+          - 4
+          - 6
+        type: 'integer[]'
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}]}'
+        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}}]}'
         headers: []
         description: null
     responseFields:
@@ -173,9 +177,10 @@ endpoints:
     uri: api/users/allergies/meals
     metadata:
       title: 'GET api/users/allergies/meals'
-      description: 'Get Meal Recommendations'
-      authenticated: false
+      description: 'Get Meal Recommendations For User'
+      authenticated: true
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -184,7 +189,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":"Pariatur.","description":"Dolor hic eveniet est voluptatem iure aut.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}},{"id":null,"title":"Et est.","description":"Rerum cum praesentium possimus iste ut rem.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}}]}'
+        content: '{"data":[{"id":null,"title":"Ipsam.","description":"Qui doloremque possimus in ut animi aperiam facilis magnam atque dolor cumque laudantium rerum.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/localhost:8000\/api\/meals\/\/items\/"}},{"id":null,"title":"Sed est.","description":"Maxime ab modi tempore harum totam facere eaque excepturi et qui aut non.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/localhost:8000\/api\/meals\/\/items\/"}}]}'
         headers: []
         description: null
     responseFields:

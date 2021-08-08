@@ -14,6 +14,31 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class AuthController extends Controller
 {
+
+    /**
+     * POST api/register
+     * 
+     * Create new user account
+     * 
+     * Get New Authorization Token
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * 
+     * @bodyParam name string required Name of the new account
+     * @bodyParam email string required Email Address of the new account
+     * @bodyParam password string required Password of the new account
+     * @bodyParam password_confirmation string required Password Confirmation
+     * 
+     * @responseField id The id of the user
+     * @responseField name The name of the user
+     * @responseField email The email of the user
+     * @responseField created_at Timestamp user was created
+     * @responseField updated_at Timestamp user was last updated
+     * @responseField deleted_at Timestamp user was trashed
+     * @responseField token Authorization Token
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function register(Request $request) {
         $fields = $request->validate([
             'name' => 'required|string',
@@ -37,6 +62,28 @@ class AuthController extends Controller
         return response()->json($response, Response::HTTP_CREATED);
     }
 
+    /**
+     * POST api/login
+     * 
+     * Login to registered account
+     * 
+     * Get New Authorization Token
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * 
+     * @bodyParam email string required Email Address of registered account
+     * @bodyParam password string required Password of registered account
+     * 
+     * @responseField id The id of the user
+     * @responseField name The name of the user
+     * @responseField email The email of the user
+     * @responseField created_at Timestamp user was created
+     * @responseField updated_at Timestamp user was last updated
+     * @responseField deleted_at Timestamp user was trashed
+     * @responseField token Authorization Token
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function login(Request $request) {
         $fields = $request->validate([
             'email' => 'required|string',
@@ -63,6 +110,19 @@ class AuthController extends Controller
         return response()->json($response, Response::HTTP_CREATED);
     }
 
+    /**
+     * POST api/logout
+     * 
+     * Logout of account
+     * 
+     * Delete Authorization Token
+     * 
+     * @authenticated
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function logout() {
         auth()->user()->tokens()->delete();
 

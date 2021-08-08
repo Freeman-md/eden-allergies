@@ -22,13 +22,13 @@ endpoints:
         name: page
         description: 'Page number to show.'
         required: false
-        example: 4
+        example: 18
         type: integer
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
+        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
         headers: []
         description: null
     responseFields:
@@ -76,14 +76,14 @@ endpoints:
         name: id
         description: 'The ID of the allergy.'
         required: true
-        example: 6
+        example: 18
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}}'
+        content: '{"data":{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}}}'
         headers: []
         description: null
     responseFields:
@@ -131,14 +131,14 @@ endpoints:
         name: allergy
         description: ''
         required: true
-        example: 13
+        example: 4
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":"Nesciunt.","description":"Ut ea sed natus iusto dolor nostrum repellat autem id rerum voluptatibus culpa nisi.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}},{"id":null,"title":"Veritatis.","description":"Nisi nulla et blanditiis architecto dolor tenetur error veritatis repudiandae voluptates.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
+        content: '{"data":[{"id":null,"title":"Aut ea.","description":"Quisquam esse eius et fugit ex excepturi.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/localhost:8000\/api\/meals\/\/items\/"}},{"id":null,"title":"Nihil.","description":"Aperiam ullam voluptatem qui enim aliquam nostrum quibusdam aliquam sit tenetur.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/localhost:8000\/api\/meals\/\/items\/"}}],"links":{"first":"\/?page=1","last":"\/?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"\/?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"\/","per_page":"10","to":2,"total":2}}'
         headers: []
         description: null
     responseFields:
@@ -193,18 +193,18 @@ endpoints:
         name: title
         description: 'The title of the allergy'
         required: true
-        example: non
+        example: debitis
         type: string
       description:
         name: description
         description: 'The description of the allergy'
         required: false
-        example: rerum
+        example: deserunt
         type: string
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}}'
+        content: '{"data":{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}}}'
         headers: []
         description: null
     responseFields:
@@ -254,7 +254,7 @@ endpoints:
         name: id
         description: 'The ID of the allergy.'
         required: true
-        example: 11
+        example: 3
         type: integer
     queryParameters: []
     bodyParameters:
@@ -262,18 +262,18 @@ endpoints:
         name: title
         description: 'The new title of the allergy'
         required: true
-        example: possimus
+        example: qui
         type: string
       description:
         name: description
         description: 'The new description of the allergy'
         required: false
-        example: aliquid
+        example: velit
         type: string
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}}'
+        content: '{"data":{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}}}'
         headers: []
         description: null
     responseFields:
@@ -322,14 +322,14 @@ endpoints:
         name: id
         description: 'The ID of the allergy.'
         required: true
-        example: 17
+        example: 14
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}}'
+        content: '{"data":{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/localhost:8000\/api\/allergies\/\/meals\/"}}}'
         headers: []
         description: null
     responseFields:

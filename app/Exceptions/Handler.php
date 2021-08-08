@@ -60,11 +60,11 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $exception)
     {
 
-        if ($exception instanceof ValidationException) {
-            return response()->json(
-                [ 'message' => $exception->response ], Response::HTTP_UNPROCESSABLE_ENTITY
-            );
-        }
+        // if ($exception instanceof ValidationException) {
+        //     return response()->json(
+        //         [ 'message' => $exception->response ], Response::HTTP_UNPROCESSABLE_ENTITY
+        //     );
+        // }
 
         if ($exception instanceof ModelNotFoundException) {
             return response()->json(

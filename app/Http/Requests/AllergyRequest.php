@@ -27,4 +27,8 @@ class AllergyRequest extends FormRequest
             'title' => 'required|string|unique:allergies,title'
         ];
     }
+
+    public function bodyParameters() {
+        return ['title', 'description'];
+    }
 }
