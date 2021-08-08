@@ -19,7 +19,7 @@
 
     <script src="//cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
     <script>
-        var baseUrl = "http://edenallergies.herokuapp.com";
+        var baseUrl = "https://edenallergies.herokuapp.com";
     </script>
     <script src="../docs/js/tryitout-3.8.0.js"></script>
 
@@ -66,7 +66,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <blockquote>
 <p>Base URL</p>
 </blockquote>
-<pre><code class="language-yaml">http://edenallergies.herokuapp.com</code></pre>
+<pre><code class="language-yaml">https://edenallergies.herokuapp.com</code></pre>
 
         <h1>Authenticating requests</h1>
 <p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
@@ -89,12 +89,12 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/gTq" \
+    --get "https://edenallergies.herokuapp.com/api/" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/gTq"
+    "https://edenallergies.herokuapp.com/api/"
 );
 
 const headers = {
@@ -109,7 +109,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/gTq',
+    'https://edenallergies.herokuapp.com/api/',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -122,7 +122,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/gTq'
+url = 'https://edenallergies.herokuapp.com/api/'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -134,23 +134,56 @@ response.json()</code></pre>
 
 <span id="example-responses-GETapi--fallbackPlaceholder-">
             <blockquote>
-            <p>Example response (404):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary>
                 <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
             </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
-access-control-allow-origin: *
+            <pre><code class="language-http">content-type: text/html; charset=UTF-8
+cache-control: no-cache, private
+set-cookie: XSRF-TOKEN=eyJpdiI6Ii9CdmdlWUdiZnhLMTFCMnlseFExVkE9PSIsInZhbHVlIjoiampSYVNFMkJ1U09XWTRwQVBPL2Z5MUhHR1o3S2huV1ZFandHWE9RdjVJc3ZOMDRtc2NjZmFXYmdCa1RUUEcxcld6T3RKeTBhOE9oanZxNHdxb2owV1IvdG5LWkRCVkNEUzNVNURFdnlZVVdZdEtYY3BncWkvNjI5QUVzVTlVVDAiLCJtYWMiOiI0NjQ0ZDNhNTZlOTI2Yjk5M2QzZmEwYWZkN2U3MDhkNDNmNmYwNmU3YjU2ZWQ1MGIzZTYwZDI3NzBjM2ViODViIn0%3D; expires=Mon, 09-Aug-2021 00:44:00 GMT; Max-Age=7200; path=/; samesite=lax; eden_allergies_session=eyJpdiI6IlprOFRMNGJmRUpyVlV6QVJ2dGpHa0E9PSIsInZhbHVlIjoiSTBFOVNBaDlnT05rU3JRbk1xYXNWdS9pQ3hHUWVIUXo5a3h1VHUzQnk3MUxhczJ0OU1oczh4OHg5RGNadnhTY2Vra1E1aHJSdStOdjYvZG5hQmJwM2RwSlBJSkxqZWV6bDNPcTZpZTA1VlYyNkl6Yzl3SXZyck9wQkFSQVBkOGsiLCJtYWMiOiI0ODQ2Zjk2Y2FmMTVmYTUxMTg4NGNhOTVlOTJhMDE5MmRlMzgzZDhmM2Q4Yjg1YWIwNDkyMWJlOTIxNGJlZTk0In0%3D; expires=Mon, 09-Aug-2021 00:44:00 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre>
         </details>         <pre>
 
-<code class="language-json">{
-    &quot;message&quot;: &quot;Page Not Found. If error persists, contact info@edenallergies.herokuapp.com&quot;
-}</code>
+<code class="language-json">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+        &lt;title&gt;Eden Allergies&lt;/title&gt;
+
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css&quot; integrity=&quot;sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot;
+        /&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css&quot; integrity=&quot;sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot;
+        /&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css&quot; integrity=&quot;sha512-Nqct4Jg8iYwFRs/C34hjAF5og5HONE2mrrUV1JZUswB+YU7vYSPyIjGMq+EAQYDmOsMuO9VIhKpRUa7GjRKVlg==&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot; /&gt;
+        &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css&quot; integrity=&quot;sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot; /&gt;
+
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/app.css?id=6ca60a6f95f28a9d52d0&quot;&gt;
+
+        &lt;style&gt;
+            body {
+                font-family: 'Nunito', sans-serif;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body class=&quot;antialiased&quot;&gt;
+        &lt;div id=&quot;app&quot;&gt;
+            &lt;router-view v-slot=&quot;{Component}&quot;&gt;
+                &lt;transition name=&quot;route&quot; mode=&quot;out-in&quot;&gt;
+                    &lt;component :is=&quot;Component&quot;&gt;&lt;/component&gt;
+                &lt;/transition&gt;
+            &lt;/router-view&gt;
+        &lt;/div&gt;
+
+        &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js&quot; integrity=&quot;sha512-bUg5gaqBVaXIJNuebamJ6uex//mjxPk8kljQTdM1SwkNrQD7pjS+PerntUSD+QRWPNJ0tq54/x4zRV8bLrLhZg==&quot; crossorigin=&quot;anonymous&quot; referrerpolicy=&quot;no-referrer&quot;&gt;&lt;/script&gt;
+        &lt;script src=&quot;/assets/js/app.js?id=8b9d1d3842895f3a29e5&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
  </pre>
     </span>
 <span id="execution-results-GETapi--fallbackPlaceholder-" hidden>
@@ -219,16 +252,16 @@ access-control-allow-origin: *
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/allergies?page=7" \
+    --get "https://edenallergies.herokuapp.com/api/allergies?page=15" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/allergies"
+    "https://edenallergies.herokuapp.com/api/allergies"
 );
 
 const params = {
-    "page": "7",
+    "page": "15",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -245,13 +278,13 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/allergies',
+    'https://edenallergies.herokuapp.com/api/allergies',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
         'query' =&gt; [
-            'page'=&gt; '7',
+            'page'=&gt; '15',
         ],
     ]
 );
@@ -261,9 +294,9 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/allergies'
+url = 'https://edenallergies.herokuapp.com/api/allergies'
 params = {
-  'page': '7',
+  'page': '15',
 }
 headers = {
   'Content-Type': 'application/json',
@@ -290,7 +323,7 @@ response.json()</code></pre>
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+                &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
             }
         },
         {
@@ -301,7 +334,7 @@ response.json()</code></pre>
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+                &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
             }
         }
     ],
@@ -432,12 +465,12 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/allergies/6" \
+    --get "https://edenallergies.herokuapp.com/api/allergies/19" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/allergies/6"
+    "https://edenallergies.herokuapp.com/api/allergies/19"
 );
 
 const headers = {
@@ -452,7 +485,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/allergies/6',
+    'https://edenallergies.herokuapp.com/api/allergies/19',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -465,7 +498,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/allergies/6'
+url = 'https://edenallergies.herokuapp.com/api/allergies/19'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -490,7 +523,7 @@ response.json()</code></pre>
         &quot;updated_at&quot;: null,
         &quot;deleted_at&quot;: null,
         &quot;links&quot;: {
-            &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+            &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
         }
     }
 }</code>
@@ -588,12 +621,12 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/allergies/4/meals" \
+    --get "https://edenallergies.herokuapp.com/api/allergies/10/meals" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/allergies/4/meals"
+    "https://edenallergies.herokuapp.com/api/allergies/10/meals"
 );
 
 const headers = {
@@ -608,7 +641,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/allergies/4/meals',
+    'https://edenallergies.herokuapp.com/api/allergies/10/meals',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -621,7 +654,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/allergies/4/meals'
+url = 'https://edenallergies.herokuapp.com/api/allergies/10/meals'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -641,26 +674,26 @@ response.json()</code></pre>
     &quot;data&quot;: [
         {
             &quot;id&quot;: null,
-            &quot;title&quot;: &quot;Sunt.&quot;,
-            &quot;description&quot;: &quot;Error quae placeat fuga omnis rerum accusantium perspiciatis illo.&quot;,
+            &quot;title&quot;: &quot;Fugiat.&quot;,
+            &quot;description&quot;: &quot;Culpa laudantium nam voluptates et expedita alias non cupiditate numquam nostrum dolores eos quia.&quot;,
             &quot;allergy&quot;: null,
             &quot;created_at&quot;: null,
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;items&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
+                &quot;items&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
             }
         },
         {
             &quot;id&quot;: null,
-            &quot;title&quot;: &quot;Sit.&quot;,
-            &quot;description&quot;: &quot;Odio quidem eos cum et voluptatem qui amet.&quot;,
+            &quot;title&quot;: &quot;Id.&quot;,
+            &quot;description&quot;: &quot;Necessitatibus et dolor numquam quia omnis minus provident pariatur ut vero voluptatum.&quot;,
             &quot;allergy&quot;: null,
             &quot;created_at&quot;: null,
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;items&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
+                &quot;items&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
             }
         }
     ],
@@ -796,18 +829,18 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request POST \
-    "http://edenallergies.herokuapp.com/api/allergies" \
+    "https://edenallergies.herokuapp.com/api/allergies" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"non\",
-    \"description\": \"eos\"
+    \"title\": \"voluptas\",
+    \"description\": \"perspiciatis\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/allergies"
+    "https://edenallergies.herokuapp.com/api/allergies"
 );
 
 const headers = {
@@ -817,8 +850,8 @@ const headers = {
 };
 
 let body = {
-    "title": "non",
-    "description": "eos"
+    "title": "voluptas",
+    "description": "perspiciatis"
 }
 
 fetch(url, {
@@ -829,15 +862,15 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://edenallergies.herokuapp.com/api/allergies',
+    'https://edenallergies.herokuapp.com/api/allergies',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'title' =&gt; 'non',
-            'description' =&gt; 'eos',
+            'title' =&gt; 'voluptas',
+            'description' =&gt; 'perspiciatis',
         ],
     ]
 );
@@ -847,10 +880,10 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/allergies'
+url = 'https://edenallergies.herokuapp.com/api/allergies'
 payload = {
-    "title": "non",
-    "description": "eos"
+    "title": "voluptas",
+    "description": "perspiciatis"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -877,7 +910,7 @@ response.json()</code></pre>
         &quot;updated_at&quot;: null,
         &quot;deleted_at&quot;: null,
         &quot;links&quot;: {
-            &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+            &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
         }
     }
 }</code>
@@ -993,18 +1026,18 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://edenallergies.herokuapp.com/api/allergies/1" \
+    "https://edenallergies.herokuapp.com/api/allergies/10" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"nisi\",
-    \"description\": \"cumque\"
+    \"title\": \"et\",
+    \"description\": \"qui\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/allergies/1"
+    "https://edenallergies.herokuapp.com/api/allergies/10"
 );
 
 const headers = {
@@ -1014,8 +1047,8 @@ const headers = {
 };
 
 let body = {
-    "title": "nisi",
-    "description": "cumque"
+    "title": "et",
+    "description": "qui"
 }
 
 fetch(url, {
@@ -1026,15 +1059,15 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://edenallergies.herokuapp.com/api/allergies/1',
+    'https://edenallergies.herokuapp.com/api/allergies/10',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'title' =&gt; 'nisi',
-            'description' =&gt; 'cumque',
+            'title' =&gt; 'et',
+            'description' =&gt; 'qui',
         ],
     ]
 );
@@ -1044,10 +1077,10 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/allergies/1'
+url = 'https://edenallergies.herokuapp.com/api/allergies/10'
 payload = {
-    "title": "nisi",
-    "description": "cumque"
+    "title": "et",
+    "description": "qui"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -1074,7 +1107,7 @@ response.json()</code></pre>
         &quot;updated_at&quot;: null,
         &quot;deleted_at&quot;: null,
         &quot;links&quot;: {
-            &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+            &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
         }
     }
 }</code>
@@ -1203,13 +1236,13 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://edenallergies.herokuapp.com/api/allergies/5" \
+    "https://edenallergies.herokuapp.com/api/allergies/17" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/allergies/5"
+    "https://edenallergies.herokuapp.com/api/allergies/17"
 );
 
 const headers = {
@@ -1225,7 +1258,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://edenallergies.herokuapp.com/api/allergies/5',
+    'https://edenallergies.herokuapp.com/api/allergies/17',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
@@ -1239,7 +1272,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/allergies/5'
+url = 'https://edenallergies.herokuapp.com/api/allergies/17'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -1265,7 +1298,7 @@ response.json()</code></pre>
         &quot;updated_at&quot;: null,
         &quot;deleted_at&quot;: null,
         &quot;links&quot;: {
-            &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+            &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
         }
     }
 }</code>
@@ -1376,19 +1409,19 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request POST \
-    "http://edenallergies.herokuapp.com/api/register" \
+    "https://edenallergies.herokuapp.com/api/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"aut\",
-    \"email\": \"ducimus\",
-    \"password\": \"suscipit\",
-    \"password_confirmation\": \"praesentium\"
+    \"name\": \"est\",
+    \"email\": \"aperiam\",
+    \"password\": \"ratione\",
+    \"password_confirmation\": \"recusandae\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/register"
+    "https://edenallergies.herokuapp.com/api/register"
 );
 
 const headers = {
@@ -1397,10 +1430,10 @@ const headers = {
 };
 
 let body = {
-    "name": "aut",
-    "email": "ducimus",
-    "password": "suscipit",
-    "password_confirmation": "praesentium"
+    "name": "est",
+    "email": "aperiam",
+    "password": "ratione",
+    "password_confirmation": "recusandae"
 }
 
 fetch(url, {
@@ -1411,16 +1444,16 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://edenallergies.herokuapp.com/api/register',
+    'https://edenallergies.herokuapp.com/api/register',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'name' =&gt; 'aut',
-            'email' =&gt; 'ducimus',
-            'password' =&gt; 'suscipit',
-            'password_confirmation' =&gt; 'praesentium',
+            'name' =&gt; 'est',
+            'email' =&gt; 'aperiam',
+            'password' =&gt; 'ratione',
+            'password_confirmation' =&gt; 'recusandae',
         ],
     ]
 );
@@ -1430,12 +1463,12 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/register'
+url = 'https://edenallergies.herokuapp.com/api/register'
 payload = {
-    "name": "aut",
-    "email": "ducimus",
-    "password": "suscipit",
-    "password_confirmation": "praesentium"
+    "name": "est",
+    "email": "aperiam",
+    "password": "ratione",
+    "password_confirmation": "recusandae"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1566,17 +1599,17 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request POST \
-    "http://edenallergies.herokuapp.com/api/login" \
+    "https://edenallergies.herokuapp.com/api/login" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"ea\",
-    \"password\": \"sed\"
+    \"email\": \"optio\",
+    \"password\": \"enim\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/login"
+    "https://edenallergies.herokuapp.com/api/login"
 );
 
 const headers = {
@@ -1585,8 +1618,8 @@ const headers = {
 };
 
 let body = {
-    "email": "ea",
-    "password": "sed"
+    "email": "optio",
+    "password": "enim"
 }
 
 fetch(url, {
@@ -1597,14 +1630,14 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://edenallergies.herokuapp.com/api/login',
+    'https://edenallergies.herokuapp.com/api/login',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'ea',
-            'password' =&gt; 'sed',
+            'email' =&gt; 'optio',
+            'password' =&gt; 'enim',
         ],
     ]
 );
@@ -1614,10 +1647,10 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/login'
+url = 'https://edenallergies.herokuapp.com/api/login'
 payload = {
-    "email": "ea",
-    "password": "sed"
+    "email": "optio",
+    "password": "enim"
 }
 headers = {
   'Content-Type': 'application/json',
@@ -1733,13 +1766,13 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request POST \
-    "http://edenallergies.herokuapp.com/api/logout" \
+    "https://edenallergies.herokuapp.com/api/logout" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/logout"
+    "https://edenallergies.herokuapp.com/api/logout"
 );
 
 const headers = {
@@ -1755,7 +1788,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://edenallergies.herokuapp.com/api/logout',
+    'https://edenallergies.herokuapp.com/api/logout',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
@@ -1769,7 +1802,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/logout'
+url = 'https://edenallergies.herokuapp.com/api/logout'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -1847,12 +1880,12 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/items" \
+    --get "https://edenallergies.herokuapp.com/api/items" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/items"
+    "https://edenallergies.herokuapp.com/api/items"
 );
 
 const headers = {
@@ -1867,7 +1900,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/items',
+    'https://edenallergies.herokuapp.com/api/items',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -1880,7 +1913,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/items'
+url = 'https://edenallergies.herokuapp.com/api/items'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -1899,21 +1932,21 @@ response.json()</code></pre>
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 297,
-            &quot;title&quot;: &quot;Nihil.&quot;,
-            &quot;description&quot;: &quot;Provident perspiciatis tempora veniam.&quot;,
+            &quot;id&quot;: 305,
+            &quot;title&quot;: &quot;Ea.&quot;,
+            &quot;description&quot;: &quot;Velit unde voluptatem voluptatem.&quot;,
             &quot;category&quot;: &quot;&quot;,
-            &quot;created_at&quot;: &quot;2021-08-08T21:50:15.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2021-08-08T21:50:15.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2021-08-08T22:43:57.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2021-08-08T22:43:57.000000Z&quot;,
             &quot;deleted_at&quot;: null
         },
         {
-            &quot;id&quot;: 298,
-            &quot;title&quot;: &quot;Et.&quot;,
-            &quot;description&quot;: &quot;Et temporibus similique nemo rem.&quot;,
+            &quot;id&quot;: 306,
+            &quot;title&quot;: &quot;Vitae.&quot;,
+            &quot;description&quot;: &quot;Harum dolorem id quae ut.&quot;,
             &quot;category&quot;: &quot;&quot;,
-            &quot;created_at&quot;: &quot;2021-08-08T21:50:15.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2021-08-08T21:50:15.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2021-08-08T22:43:57.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2021-08-08T22:43:57.000000Z&quot;,
             &quot;deleted_at&quot;: null
         }
     ],
@@ -2031,12 +2064,12 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/items/6" \
+    --get "https://edenallergies.herokuapp.com/api/items/20" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/items/6"
+    "https://edenallergies.herokuapp.com/api/items/20"
 );
 
 const headers = {
@@ -2051,7 +2084,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/items/6',
+    'https://edenallergies.herokuapp.com/api/items/20',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -2064,7 +2097,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/items/6'
+url = 'https://edenallergies.herokuapp.com/api/items/20'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -2082,12 +2115,12 @@ response.json()</code></pre>
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 299,
-        &quot;title&quot;: &quot;Eum.&quot;,
-        &quot;description&quot;: &quot;Voluptas labore recusandae ut.&quot;,
+        &quot;id&quot;: 307,
+        &quot;title&quot;: &quot;Error.&quot;,
+        &quot;description&quot;: &quot;Voluptatem aliquid expedita ut.&quot;,
         &quot;category&quot;: &quot;&quot;,
-        &quot;created_at&quot;: &quot;2021-08-08T21:50:15.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-08T21:50:15.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-08T22:43:58.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-08T22:43:58.000000Z&quot;,
         &quot;deleted_at&quot;: null
     }
 }</code>
@@ -2182,18 +2215,18 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request POST \
-    "http://edenallergies.herokuapp.com/api/items" \
+    "https://edenallergies.herokuapp.com/api/items" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"sint\",
-    \"description\": \"ducimus\"
+    \"title\": \"tempora\",
+    \"description\": \"ut\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/items"
+    "https://edenallergies.herokuapp.com/api/items"
 );
 
 const headers = {
@@ -2203,8 +2236,8 @@ const headers = {
 };
 
 let body = {
-    "title": "sint",
-    "description": "ducimus"
+    "title": "tempora",
+    "description": "ut"
 }
 
 fetch(url, {
@@ -2215,15 +2248,15 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://edenallergies.herokuapp.com/api/items',
+    'https://edenallergies.herokuapp.com/api/items',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'title' =&gt; 'sint',
-            'description' =&gt; 'ducimus',
+            'title' =&gt; 'tempora',
+            'description' =&gt; 'ut',
         ],
     ]
 );
@@ -2233,10 +2266,10 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/items'
+url = 'https://edenallergies.herokuapp.com/api/items'
 payload = {
-    "title": "sint",
-    "description": "ducimus"
+    "title": "tempora",
+    "description": "ut"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -2256,12 +2289,12 @@ response.json()</code></pre>
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 302,
-        &quot;title&quot;: &quot;Fugit.&quot;,
-        &quot;description&quot;: &quot;Facere vel officia.&quot;,
+        &quot;id&quot;: 310,
+        &quot;title&quot;: &quot;Maxime.&quot;,
+        &quot;description&quot;: &quot;Nihil facere possimus.&quot;,
         &quot;category&quot;: &quot;&quot;,
-        &quot;created_at&quot;: &quot;2021-08-08T21:50:17.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-08T21:50:17.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-08T22:43:59.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-08T22:43:59.000000Z&quot;,
         &quot;deleted_at&quot;: null
     }
 }</code>
@@ -2373,18 +2406,18 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://edenallergies.herokuapp.com/api/items/19" \
+    "https://edenallergies.herokuapp.com/api/items/13" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"suscipit\",
-    \"description\": \"corrupti\"
+    \"title\": \"officia\",
+    \"description\": \"aliquam\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/items/19"
+    "https://edenallergies.herokuapp.com/api/items/13"
 );
 
 const headers = {
@@ -2394,8 +2427,8 @@ const headers = {
 };
 
 let body = {
-    "title": "suscipit",
-    "description": "corrupti"
+    "title": "officia",
+    "description": "aliquam"
 }
 
 fetch(url, {
@@ -2406,15 +2439,15 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://edenallergies.herokuapp.com/api/items/19',
+    'https://edenallergies.herokuapp.com/api/items/13',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'title' =&gt; 'suscipit',
-            'description' =&gt; 'corrupti',
+            'title' =&gt; 'officia',
+            'description' =&gt; 'aliquam',
         ],
     ]
 );
@@ -2424,10 +2457,10 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/items/19'
+url = 'https://edenallergies.herokuapp.com/api/items/13'
 payload = {
-    "title": "suscipit",
-    "description": "corrupti"
+    "title": "officia",
+    "description": "aliquam"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -2447,12 +2480,12 @@ response.json()</code></pre>
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 303,
-        &quot;title&quot;: &quot;Fugit.&quot;,
-        &quot;description&quot;: &quot;Iusto laborum perferendis aut vel error.&quot;,
+        &quot;id&quot;: 311,
+        &quot;title&quot;: &quot;Vitae.&quot;,
+        &quot;description&quot;: &quot;Voluptatem id dolorem quam.&quot;,
         &quot;category&quot;: &quot;&quot;,
-        &quot;created_at&quot;: &quot;2021-08-08T21:50:17.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-08T21:50:17.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-08T22:43:59.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-08T22:43:59.000000Z&quot;,
         &quot;deleted_at&quot;: null
     }
 }</code>
@@ -2585,13 +2618,13 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://edenallergies.herokuapp.com/api/items/20" \
+    "https://edenallergies.herokuapp.com/api/items/18" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/items/20"
+    "https://edenallergies.herokuapp.com/api/items/18"
 );
 
 const headers = {
@@ -2607,7 +2640,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://edenallergies.herokuapp.com/api/items/20',
+    'https://edenallergies.herokuapp.com/api/items/18',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
@@ -2621,7 +2654,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/items/20'
+url = 'https://edenallergies.herokuapp.com/api/items/18'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -2640,12 +2673,12 @@ response.json()</code></pre>
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 304,
-        &quot;title&quot;: &quot;Sunt.&quot;,
-        &quot;description&quot;: &quot;Libero eos aspernatur natus sapiente.&quot;,
+        &quot;id&quot;: 312,
+        &quot;title&quot;: &quot;Ipsa.&quot;,
+        &quot;description&quot;: &quot;Ducimus dignissimos accusamus et corrupti dolore.&quot;,
         &quot;category&quot;: &quot;&quot;,
-        &quot;created_at&quot;: &quot;2021-08-08T21:50:17.000000Z&quot;,
-        &quot;updated_at&quot;: &quot;2021-08-08T21:50:17.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2021-08-08T22:43:59.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2021-08-08T22:43:59.000000Z&quot;,
         &quot;deleted_at&quot;: null
     }
 }</code>
@@ -2751,16 +2784,16 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/meals?page=11" \
+    --get "https://edenallergies.herokuapp.com/api/meals?page=8" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/meals"
+    "https://edenallergies.herokuapp.com/api/meals"
 );
 
 const params = {
-    "page": "11",
+    "page": "8",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2777,13 +2810,13 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/meals',
+    'https://edenallergies.herokuapp.com/api/meals',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
         ],
         'query' =&gt; [
-            'page'=&gt; '11',
+            'page'=&gt; '8',
         ],
     ]
 );
@@ -2793,9 +2826,9 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/meals'
+url = 'https://edenallergies.herokuapp.com/api/meals'
 params = {
-  'page': '11',
+  'page': '8',
 }
 headers = {
   'Content-Type': 'application/json',
@@ -2816,26 +2849,26 @@ response.json()</code></pre>
     &quot;data&quot;: [
         {
             &quot;id&quot;: null,
-            &quot;title&quot;: &quot;Assumenda.&quot;,
-            &quot;description&quot;: &quot;Ea blanditiis dolorem ut voluptates facilis doloribus nihil impedit veritatis consequatur natus non.&quot;,
+            &quot;title&quot;: &quot;Non.&quot;,
+            &quot;description&quot;: &quot;Accusantium perspiciatis nam rerum voluptas molestias quia maiores qui quia cum.&quot;,
             &quot;allergy&quot;: null,
             &quot;created_at&quot;: null,
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;items&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
+                &quot;items&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
             }
         },
         {
             &quot;id&quot;: null,
-            &quot;title&quot;: &quot;Qui.&quot;,
-            &quot;description&quot;: &quot;In aspernatur et qui voluptates officia accusamus debitis sed voluptate aut.&quot;,
+            &quot;title&quot;: &quot;Eos.&quot;,
+            &quot;description&quot;: &quot;Similique quo sunt voluptatem reprehenderit repellendus hic id laboriosam beatae.&quot;,
             &quot;allergy&quot;: null,
             &quot;created_at&quot;: null,
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;items&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
+                &quot;items&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
             }
         }
     ],
@@ -2970,12 +3003,12 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/meals/13" \
+    --get "https://edenallergies.herokuapp.com/api/meals/4" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/meals/13"
+    "https://edenallergies.herokuapp.com/api/meals/4"
 );
 
 const headers = {
@@ -2990,7 +3023,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/meals/13',
+    'https://edenallergies.herokuapp.com/api/meals/4',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -3003,7 +3036,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/meals/13'
+url = 'https://edenallergies.herokuapp.com/api/meals/4'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3022,14 +3055,14 @@ response.json()</code></pre>
 <code class="language-json">{
     &quot;data&quot;: {
         &quot;id&quot;: null,
-        &quot;title&quot;: &quot;Qui in.&quot;,
-        &quot;description&quot;: &quot;Et inventore quidem minus maiores aut officia labore voluptas ea nostrum minus excepturi.&quot;,
+        &quot;title&quot;: &quot;Nisi ut.&quot;,
+        &quot;description&quot;: &quot;Est qui eligendi id aliquam quaerat ea dolor aut reiciendis sint.&quot;,
         &quot;allergy&quot;: null,
         &quot;created_at&quot;: null,
         &quot;updated_at&quot;: null,
         &quot;deleted_at&quot;: null,
         &quot;links&quot;: {
-            &quot;items&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
+            &quot;items&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
         }
     }
 }</code>
@@ -3131,12 +3164,12 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/meals/16/items" \
+    --get "https://edenallergies.herokuapp.com/api/meals/17/items" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/meals/16/items"
+    "https://edenallergies.herokuapp.com/api/meals/17/items"
 );
 
 const headers = {
@@ -3151,7 +3184,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/meals/16/items',
+    'https://edenallergies.herokuapp.com/api/meals/17/items',
     [
         'headers' =&gt; [
             'Accept' =&gt; 'application/json',
@@ -3164,7 +3197,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/meals/16/items'
+url = 'https://edenallergies.herokuapp.com/api/meals/17/items'
 headers = {
   'Content-Type': 'application/json',
   'Accept': 'application/json'
@@ -3183,21 +3216,21 @@ response.json()</code></pre>
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 300,
-            &quot;title&quot;: &quot;Nihil.&quot;,
-            &quot;description&quot;: &quot;Sapiente sit esse voluptas ipsum minima.&quot;,
+            &quot;id&quot;: 308,
+            &quot;title&quot;: &quot;Est.&quot;,
+            &quot;description&quot;: &quot;Vel voluptatem officia quibusdam fugiat.&quot;,
             &quot;category&quot;: &quot;&quot;,
-            &quot;created_at&quot;: &quot;2021-08-08T21:50:16.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2021-08-08T21:50:16.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2021-08-08T22:43:58.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2021-08-08T22:43:58.000000Z&quot;,
             &quot;deleted_at&quot;: null
         },
         {
-            &quot;id&quot;: 301,
-            &quot;title&quot;: &quot;Ab.&quot;,
-            &quot;description&quot;: &quot;Vero libero eligendi.&quot;,
+            &quot;id&quot;: 309,
+            &quot;title&quot;: &quot;Quia.&quot;,
+            &quot;description&quot;: &quot;Ex ut quas eaque.&quot;,
             &quot;category&quot;: &quot;&quot;,
-            &quot;created_at&quot;: &quot;2021-08-08T21:50:16.000000Z&quot;,
-            &quot;updated_at&quot;: &quot;2021-08-08T21:50:16.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2021-08-08T22:43:58.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2021-08-08T22:43:58.000000Z&quot;,
             &quot;deleted_at&quot;: null
         }
     ],
@@ -3325,19 +3358,19 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request POST \
-    "http://edenallergies.herokuapp.com/api/meals" \
+    "https://edenallergies.herokuapp.com/api/meals" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"allergy\": \"iusto\",
-    \"title\": \"nulla\",
-    \"description\": \"ab\"
+    \"allergy\": \"molestiae\",
+    \"title\": \"architecto\",
+    \"description\": \"voluptas\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/meals"
+    "https://edenallergies.herokuapp.com/api/meals"
 );
 
 const headers = {
@@ -3347,9 +3380,9 @@ const headers = {
 };
 
 let body = {
-    "allergy": "iusto",
-    "title": "nulla",
-    "description": "ab"
+    "allergy": "molestiae",
+    "title": "architecto",
+    "description": "voluptas"
 }
 
 fetch(url, {
@@ -3360,16 +3393,16 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://edenallergies.herokuapp.com/api/meals',
+    'https://edenallergies.herokuapp.com/api/meals',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'allergy' =&gt; 'iusto',
-            'title' =&gt; 'nulla',
-            'description' =&gt; 'ab',
+            'allergy' =&gt; 'molestiae',
+            'title' =&gt; 'architecto',
+            'description' =&gt; 'voluptas',
         ],
     ]
 );
@@ -3379,11 +3412,11 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/meals'
+url = 'https://edenallergies.herokuapp.com/api/meals'
 payload = {
-    "allergy": "iusto",
-    "title": "nulla",
-    "description": "ab"
+    "allergy": "molestiae",
+    "title": "architecto",
+    "description": "voluptas"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -3404,14 +3437,14 @@ response.json()</code></pre>
 <code class="language-json">{
     &quot;data&quot;: {
         &quot;id&quot;: null,
-        &quot;title&quot;: &quot;Quasi.&quot;,
-        &quot;description&quot;: &quot;Labore minus laborum repellendus voluptatem nihil dolorem asperiores quibusdam expedita laudantium quos qui id.&quot;,
+        &quot;title&quot;: &quot;Tempore.&quot;,
+        &quot;description&quot;: &quot;Odio qui et accusantium sint at similique facilis.&quot;,
         &quot;allergy&quot;: null,
         &quot;created_at&quot;: null,
         &quot;updated_at&quot;: null,
         &quot;deleted_at&quot;: null,
         &quot;links&quot;: {
-            &quot;items&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
+            &quot;items&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
         }
     }
 }</code>
@@ -3539,18 +3572,18 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://edenallergies.herokuapp.com/api/meals/19" \
+    "https://edenallergies.herokuapp.com/api/meals/16" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"sit\",
-    \"description\": \"adipisci\"
+    \"title\": \"voluptatem\",
+    \"description\": \"rerum\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/meals/19"
+    "https://edenallergies.herokuapp.com/api/meals/16"
 );
 
 const headers = {
@@ -3560,8 +3593,8 @@ const headers = {
 };
 
 let body = {
-    "title": "sit",
-    "description": "adipisci"
+    "title": "voluptatem",
+    "description": "rerum"
 }
 
 fetch(url, {
@@ -3572,15 +3605,15 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;put(
-    'http://edenallergies.herokuapp.com/api/meals/19',
+    'https://edenallergies.herokuapp.com/api/meals/16',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'title' =&gt; 'sit',
-            'description' =&gt; 'adipisci',
+            'title' =&gt; 'voluptatem',
+            'description' =&gt; 'rerum',
         ],
     ]
 );
@@ -3590,10 +3623,10 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/meals/19'
+url = 'https://edenallergies.herokuapp.com/api/meals/16'
 payload = {
-    "title": "sit",
-    "description": "adipisci"
+    "title": "voluptatem",
+    "description": "rerum"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -3614,14 +3647,14 @@ response.json()</code></pre>
 <code class="language-json">{
     &quot;data&quot;: {
         &quot;id&quot;: null,
-        &quot;title&quot;: &quot;Maiores.&quot;,
-        &quot;description&quot;: &quot;Dolor neque nihil iure occaecati dolor ipsam hic aperiam accusantium labore quos iusto.&quot;,
+        &quot;title&quot;: &quot;Eveniet.&quot;,
+        &quot;description&quot;: &quot;Quia quidem dignissimos quisquam voluptatibus alias deleniti qui quaerat cumque totam.&quot;,
         &quot;allergy&quot;: null,
         &quot;created_at&quot;: null,
         &quot;updated_at&quot;: null,
         &quot;deleted_at&quot;: null,
         &quot;links&quot;: {
-            &quot;items&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
+            &quot;items&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
         }
     }
 }</code>
@@ -3754,13 +3787,13 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://edenallergies.herokuapp.com/api/meals/10" \
+    "https://edenallergies.herokuapp.com/api/meals/7" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/meals/10"
+    "https://edenallergies.herokuapp.com/api/meals/7"
 );
 
 const headers = {
@@ -3776,7 +3809,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;delete(
-    'http://edenallergies.herokuapp.com/api/meals/10',
+    'https://edenallergies.herokuapp.com/api/meals/7',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
@@ -3790,7 +3823,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/meals/10'
+url = 'https://edenallergies.herokuapp.com/api/meals/7'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3810,14 +3843,14 @@ response.json()</code></pre>
 <code class="language-json">{
     &quot;data&quot;: {
         &quot;id&quot;: null,
-        &quot;title&quot;: &quot;Quis eos.&quot;,
-        &quot;description&quot;: &quot;Ullam qui maxime earum excepturi dolores pariatur minima labore optio expedita dolores eligendi et.&quot;,
+        &quot;title&quot;: &quot;Possimus.&quot;,
+        &quot;description&quot;: &quot;Omnis ab nulla non rem pariatur optio consequuntur nostrum est veniam exercitationem nesciunt.&quot;,
         &quot;allergy&quot;: null,
         &quot;created_at&quot;: null,
         &quot;updated_at&quot;: null,
         &quot;deleted_at&quot;: null,
         &quot;links&quot;: {
-            &quot;items&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
+            &quot;items&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
         }
     }
 }</code>
@@ -3932,13 +3965,13 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/users/allergies" \
+    --get "https://edenallergies.herokuapp.com/api/users/allergies" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/users/allergies"
+    "https://edenallergies.herokuapp.com/api/users/allergies"
 );
 
 const headers = {
@@ -3954,7 +3987,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/users/allergies',
+    'https://edenallergies.herokuapp.com/api/users/allergies',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
@@ -3968,7 +4001,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/users/allergies'
+url = 'https://edenallergies.herokuapp.com/api/users/allergies'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3995,7 +4028,7 @@ response.json()</code></pre>
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+                &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
             }
         },
         {
@@ -4006,7 +4039,7 @@ response.json()</code></pre>
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+                &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
             }
         }
     ]
@@ -4105,7 +4138,7 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request POST \
-    "http://edenallergies.herokuapp.com/api/users/allergies/add" \
+    "https://edenallergies.herokuapp.com/api/users/allergies/add" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -4118,7 +4151,7 @@ response.json()</code></pre>
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/users/allergies/add"
+    "https://edenallergies.herokuapp.com/api/users/allergies/add"
 );
 
 const headers = {
@@ -4142,7 +4175,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://edenallergies.herokuapp.com/api/users/allergies/add',
+    'https://edenallergies.herokuapp.com/api/users/allergies/add',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
@@ -4162,7 +4195,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/users/allergies/add'
+url = 'https://edenallergies.herokuapp.com/api/users/allergies/add'
 payload = {
     "allergies": [
         4,
@@ -4195,7 +4228,7 @@ response.json()</code></pre>
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+                &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
             }
         },
         {
@@ -4206,7 +4239,7 @@ response.json()</code></pre>
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+                &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
             }
         }
     ]
@@ -4319,7 +4352,7 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request POST \
-    "http://edenallergies.herokuapp.com/api/users/allergies/remove" \
+    "https://edenallergies.herokuapp.com/api/users/allergies/remove" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -4332,7 +4365,7 @@ response.json()</code></pre>
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/users/allergies/remove"
+    "https://edenallergies.herokuapp.com/api/users/allergies/remove"
 );
 
 const headers = {
@@ -4356,7 +4389,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;post(
-    'http://edenallergies.herokuapp.com/api/users/allergies/remove',
+    'https://edenallergies.herokuapp.com/api/users/allergies/remove',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
@@ -4376,7 +4409,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/users/allergies/remove'
+url = 'https://edenallergies.herokuapp.com/api/users/allergies/remove'
 payload = {
     "allergies": [
         4,
@@ -4409,7 +4442,7 @@ response.json()</code></pre>
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+                &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
             }
         },
         {
@@ -4420,7 +4453,7 @@ response.json()</code></pre>
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;meals&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
+                &quot;meals&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/&quot;
             }
         }
     ]
@@ -4533,13 +4566,13 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/users/allergies/meals" \
+    --get "https://edenallergies.herokuapp.com/api/users/allergies/meals" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/users/allergies/meals"
+    "https://edenallergies.herokuapp.com/api/users/allergies/meals"
 );
 
 const headers = {
@@ -4555,7 +4588,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/users/allergies/meals',
+    'https://edenallergies.herokuapp.com/api/users/allergies/meals',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
@@ -4569,7 +4602,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/users/allergies/meals'
+url = 'https://edenallergies.herokuapp.com/api/users/allergies/meals'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4590,26 +4623,26 @@ response.json()</code></pre>
     &quot;data&quot;: [
         {
             &quot;id&quot;: null,
-            &quot;title&quot;: &quot;Vel id.&quot;,
-            &quot;description&quot;: &quot;Rerum quasi in et delectus voluptatem et velit.&quot;,
+            &quot;title&quot;: &quot;Ut qui.&quot;,
+            &quot;description&quot;: &quot;Molestiae deserunt et ut quidem nam pariatur.&quot;,
             &quot;allergy&quot;: null,
             &quot;created_at&quot;: null,
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;items&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
+                &quot;items&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
             }
         },
         {
             &quot;id&quot;: null,
-            &quot;title&quot;: &quot;Ut qui.&quot;,
-            &quot;description&quot;: &quot;Adipisci consequatur voluptatem assumenda earum voluptatem molestiae et nisi.&quot;,
+            &quot;title&quot;: &quot;In sint.&quot;,
+            &quot;description&quot;: &quot;Ex deleniti quia eos dignissimos libero rerum eum possimus accusantium autem beatae.&quot;,
             &quot;allergy&quot;: null,
             &quot;created_at&quot;: null,
             &quot;updated_at&quot;: null,
             &quot;deleted_at&quot;: null,
             &quot;links&quot;: {
-                &quot;items&quot;: &quot;http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
+                &quot;items&quot;: &quot;https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/&quot;
             }
         }
     ]
@@ -4712,13 +4745,13 @@ response.json()</code></pre>
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://edenallergies.herokuapp.com/api/user" \
+    --get "https://edenallergies.herokuapp.com/api/user" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://edenallergies.herokuapp.com/api/user"
+    "https://edenallergies.herokuapp.com/api/user"
 );
 
 const headers = {
@@ -4734,7 +4767,7 @@ fetch(url, {
 
 <pre><code class="language-php">$client = new \GuzzleHttp\Client();
 $response = $client-&gt;get(
-    'http://edenallergies.herokuapp.com/api/user',
+    'https://edenallergies.herokuapp.com/api/user',
     [
         'headers' =&gt; [
             'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
@@ -4748,7 +4781,7 @@ print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import requests
 import json
 
-url = 'http://edenallergies.herokuapp.com/api/user'
+url = 'https://edenallergies.herokuapp.com/api/user'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',

@@ -26,25 +26,25 @@ endpoints:
         name: name
         description: 'Name of the new account'
         required: true
-        example: aut
+        example: est
         type: string
       email:
         name: email
         description: 'Email Address of the new account'
         required: true
-        example: ducimus
+        example: aperiam
         type: string
       password:
         name: password
         description: 'Password of the new account'
         required: true
-        example: suscipit
+        example: ratione
         type: string
       password_confirmation:
         name: password_confirmation
         description: 'Password Confirmation'
         required: true
-        example: praesentium
+        example: recusandae
         type: string
     responses: []
     responseFields:
@@ -97,13 +97,13 @@ endpoints:
         name: email
         description: 'Email Address of registered account'
         required: true
-        example: ea
+        example: optio
         type: string
       password:
         name: password
         description: 'Password of registered account'
         required: true
-        example: sed
+        example: enim
         type: string
     responses: []
     responseFields:

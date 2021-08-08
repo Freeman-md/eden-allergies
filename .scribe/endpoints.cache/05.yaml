@@ -23,7 +23,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}]}'
+        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}]}'
         headers: []
         description: null
     responseFields:
@@ -81,7 +81,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}]}'
+        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}]}'
         headers: []
         description: null
     responseFields:
@@ -139,7 +139,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"http:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}]}'
+        content: '{"data":[{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}},{"id":null,"title":null,"description":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"meals":"https:\/\/edenallergies.herokuapp.com\/api\/allergies\/\/meals\/"}}]}'
         headers: []
         description: null
     responseFields:
@@ -189,7 +189,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":null,"title":"Vel id.","description":"Rerum quasi in et delectus voluptatem et velit.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}},{"id":null,"title":"Ut qui.","description":"Adipisci consequatur voluptatem assumenda earum voluptatem molestiae et nisi.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"http:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}}]}'
+        content: '{"data":[{"id":null,"title":"Ut qui.","description":"Molestiae deserunt et ut quidem nam pariatur.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}},{"id":null,"title":"In sint.","description":"Ex deleniti quia eos dignissimos libero rerum eum possimus accusantium autem beatae.","allergy":null,"created_at":null,"updated_at":null,"deleted_at":null,"links":{"items":"https:\/\/edenallergies.herokuapp.com\/api\/meals\/\/items\/"}}]}'
         headers: []
         description: null
     responseFields:

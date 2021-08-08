@@ -19,19 +19,54 @@ endpoints:
         name: fallbackPlaceholder
         description: ''
         required: true
-        example: gTq
+        example: ''
         type: string
     queryParameters: []
     bodyParameters: []
     responses:
       -
-        status: 404
-        content: '{"message":"Page Not Found. If error persists, contact info@edenallergies.herokuapp.com"}'
+        status: 200
+        content: |
+          <!DOCTYPE html>
+          <html lang="en">
+              <head>
+                  <meta charset="utf-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+                  <title>Eden Allergies</title>
+
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css" integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+                  />
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+                  />
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css" integrity="sha512-Nqct4Jg8iYwFRs/C34hjAF5og5HONE2mrrUV1JZUswB+YU7vYSPyIjGMq+EAQYDmOsMuO9VIhKpRUa7GjRKVlg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+                  <link rel="stylesheet" href="/assets/css/app.css?id=6ca60a6f95f28a9d52d0">
+
+                  <style>
+                      body {
+                          font-family: 'Nunito', sans-serif;
+                      }
+                  </style>
+              </head>
+              <body class="antialiased">
+                  <div id="app">
+                      <router-view v-slot="{Component}">
+                          <transition name="route" mode="out-in">
+                              <component :is="Component"></component>
+                          </transition>
+                      </router-view>
+                  </div>
+
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js" integrity="sha512-bUg5gaqBVaXIJNuebamJ6uex//mjxPk8kljQTdM1SwkNrQD7pjS+PerntUSD+QRWPNJ0tq54/x4zRV8bLrLhZg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                  <script src="/assets/js/app.js?id=8b9d1d3842895f3a29e5"></script>
+              </body>
+          </html>
         headers:
+          content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
-          access-control-allow-origin: '*'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6Ii9CdmdlWUdiZnhLMTFCMnlseFExVkE9PSIsInZhbHVlIjoiampSYVNFMkJ1U09XWTRwQVBPL2Z5MUhHR1o3S2huV1ZFandHWE9RdjVJc3ZOMDRtc2NjZmFXYmdCa1RUUEcxcld6T3RKeTBhOE9oanZxNHdxb2owV1IvdG5LWkRCVkNEUzNVNURFdnlZVVdZdEtYY3BncWkvNjI5QUVzVTlVVDAiLCJtYWMiOiI0NjQ0ZDNhNTZlOTI2Yjk5M2QzZmEwYWZkN2U3MDhkNDNmNmYwNmU3YjU2ZWQ1MGIzZTYwZDI3NzBjM2ViODViIn0%3D; expires=Mon, 09-Aug-2021 00:44:00 GMT; Max-Age=7200; path=/; samesite=lax; eden_allergies_session=eyJpdiI6IlprOFRMNGJmRUpyVlV6QVJ2dGpHa0E9PSIsInZhbHVlIjoiSTBFOVNBaDlnT05rU3JRbk1xYXNWdS9pQ3hHUWVIUXo5a3h1VHUzQnk3MUxhczJ0OU1oczh4OHg5RGNadnhTY2Vra1E1aHJSdStOdjYvZG5hQmJwM2RwSlBJSkxqZWV6bDNPcTZpZTA1VlYyNkl6Yzl3SXZyck9wQkFSQVBkOGsiLCJtYWMiOiI0ODQ2Zjk2Y2FmMTVmYTUxMTg4NGNhOTVlOTJhMDE5MmRlMzgzZDhmM2Q4Yjg1YWIwNDkyMWJlOTIxNGJlZTk0In0%3D; expires=Mon, 09-Aug-2021 00:44:00 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
     responseFields: []
