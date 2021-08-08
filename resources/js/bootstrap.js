@@ -10,6 +10,7 @@ try {
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
 window.axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 window.axios.defaults.baseURL = 'https://edenallergies.herokuapp.com'
 

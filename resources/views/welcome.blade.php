@@ -32,6 +32,7 @@
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js" integrity="sha512-bUg5gaqBVaXIJNuebamJ6uex//mjxPk8kljQTdM1SwkNrQD7pjS+PerntUSD+QRWPNJ0tq54/x4zRV8bLrLhZg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>window.Laravel = {csrfToken: '{{ csrf_token() }}'}</script>
         <script src="{{ mix('assets/js/app.js') }}"></script>
     </body>
 </html>
